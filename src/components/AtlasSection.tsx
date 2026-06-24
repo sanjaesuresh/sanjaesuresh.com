@@ -30,8 +30,8 @@ export default function AtlasSection() {
         className="-mt-4 mb-7 max-w-[60ch] text-[14px] leading-[1.6]"
         style={{ fontFamily: "var(--font-space-grotesk)", color: "var(--mute)" }}
       >
-        A map of everywhere I&apos;ve traveled. Places I&apos;ve passed
-        through, lived in, and call home.
+        A map of everywhere I&apos;ve traveled. Places I&apos;ve visited, lived
+        in, or currently call home.
       </p>
 
       <div
