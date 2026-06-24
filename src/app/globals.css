@@ -1,26 +1,285 @@
 @import "tailwindcss";
 
+/* Cyanotype palette -- 1842 blueprint photographic process */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --ink: #0C1822;
+  --ink-2: #122230;
+  --ink-3: #172C3C;
+  --rule: #233D52;
+  --rule-2: #30506A;
+  --paper: #DCE8F2;
+  --mute: #7F97AC;
+  --dim: #566B80;
+  --accent: #5BA8CC;
+  --accent-dim: #3E7E9C;
+  --signal: #C98A5E;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-ink: var(--ink);
+  --color-ink-2: var(--ink-2);
+  --color-ink-3: var(--ink-3);
+  --color-rule: var(--rule);
+  --color-rule-2: var(--rule-2);
+  --color-paper: var(--paper);
+  --color-mute: var(--mute);
+  --color-dim: var(--dim);
+  --color-accent: var(--accent);
+  --color-accent-dim: var(--accent-dim);
+  --color-signal: var(--signal);
+  --font-sans: var(--font-space-grotesk);
+  --font-mono: var(--font-ibm-plex-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+/* Reset lives in @layer base so Tailwind's utility layer (mx-auto, mb-*, px-*, py-*)
+   can still override margin/padding. Unlayered, it would beat every utility. */
+@layer base {
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
   }
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--ink);
+  color: var(--paper);
+  font-family: var(--font-space-grotesk), system-ui, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection {
+  background: var(--accent);
+  color: var(--ink);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .blink-cursor {
+    animation: none !important;
+  }
+}
+
+@keyframes blink {
+  50% { opacity: 0; }
+}
+
+.blink-cursor {
+  display: inline-block;
+  width: 8px;
+  height: 15px;
+  background: var(--accent);
+  vertical-align: -2px;
+  margin-left: 3px;
+  animation: blink 1.1s steps(1) infinite;
+}
+
+/* Nav underline slide effect */
+.nav-link {
+  position: relative;
+  color: var(--mute);
+  transition: color 0.15s;
+}
+
+.nav-link::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 100%;
+  bottom: -4px;
+  height: 1px;
+  background: var(--accent);
+  transition: right 0.2s;
+}
+
+.nav-link:hover {
+  color: var(--paper);
+}
+
+.nav-link:hover::before {
+  right: 0;
+}
+
+/* Focus visible styles */
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+/* Masthead layout */
+.mast-grid {
+  display: grid;
+  grid-template-columns: 1fr 270px;
+  gap: 46px;
+  align-items: center;
+  padding: 72px 0 56px;
+}
+
+.headshot-box {
+  aspect-ratio: 4/5;
+}
+
+/* Headshot placeholder (shown when headshot.jpg is absent) */
+.headshot-placeholder {
+  font-family: var(--font-mono), ui-monospace, monospace;
+  font-size: 12px;
+  color: var(--dim);
+  line-height: 1.7;
+}
+
+/* Preamble block: monospace key-value block above the CTA buttons */
+.preamble-block {
+  font-family: var(--font-mono), ui-monospace, monospace;
+  font-size: 15px;
+  line-height: 2;
+  color: var(--mute);
+  white-space: pre;
+}
+
+/* Masthead CTA button row */
+.mast-actions {
+  margin-top: 30px;
+  font-family: var(--font-mono), ui-monospace, monospace;
+  font-size: 13px;
+}
+
+/* File-button hover states (cyanotype palette) */
+.file-btn {
+  padding: 10px 18px;
+  border: 1px solid var(--rule-2);
+  color: var(--paper);
+  transition: border-color 0.15s, color 0.15s;
+}
+
+.file-btn:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.file-btn-solid {
+  background: var(--accent);
+  color: var(--ink);
+  border-color: var(--accent);
+  transition: background 0.15s, border-color 0.15s;
+}
+
+.file-btn-solid:hover {
+  background: var(--accent-dim);
+  border-color: var(--accent-dim);
+  color: var(--ink);
+}
+
+/* Experience log row hover */
+.log-entry {
+  transition: background 0.15s;
+}
+
+.log-entry:hover {
+  background: var(--ink-2);
+}
+
+/* Project link hover */
+.proj-link {
+  color: var(--accent);
+  border-bottom: 1px solid transparent;
+  padding-bottom: 1px;
+  transition: border-color 0.15s;
+}
+
+.proj-link:hover {
+  border-bottom-color: var(--accent);
+}
+
+/* Contact link hover */
+.cfg-link {
+  color: var(--accent);
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.15s;
+}
+
+.cfg-link:hover {
+  border-bottom-color: var(--accent);
+}
+
+/* Photography frame hover */
+.frame-img {
+  filter: saturate(0.92) contrast(1.02);
+  transition: filter 0.3s;
+}
+
+.photo-frame:hover .frame-img {
+  filter: saturate(1.05) contrast(1.02);
+}
+
+/* Base grid column templates (desktop). Overridden in the responsive block below. */
+.about-grid {
+  grid-template-columns: 1fr 280px;
+}
+
+.log-entry {
+  grid-template-columns: 150px 1fr;
+}
+
+.sheet-grid {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+/* Photo grid: each image at its original aspect ratio, packed into columns. */
+.collage {
+  column-count: 3;
+  column-gap: 14px;
+}
+.collage > * {
+  break-inside: avoid;
+  margin-bottom: 14px;
+}
+
+/* Responsive */
+@media (max-width: 760px) {
+  .collage {
+    column-count: 2;
+  }
+  .mast-grid {
+    grid-template-columns: 1fr;
+    gap: 28px;
+    padding: 40px 0 36px;
+  }
+
+  .headshot-box {
+    max-width: 240px;
+  }
+
+  .about-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .log-entry {
+    grid-template-columns: 1fr !important;
+    gap: 6px !important;
+  }
+
+  .nav-links {
+    display: none;
+  }
+
+  .status-chip {
+    display: none;
+  }
+
+  .sheet-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
 }

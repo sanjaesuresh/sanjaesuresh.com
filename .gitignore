@@ -39,3 +39,10 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# project: working docs and mockups (not part of the site)
+/docs/
+/mockups/
+
+# raw photo originals (1GB+); the web-optimized copies live in /public/photography
+/content/photography/
