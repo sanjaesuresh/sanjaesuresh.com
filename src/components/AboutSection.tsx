@@ -22,9 +22,10 @@ export default function AboutSection() {
             }}
           >
             Hey, I&apos;m Sanjae. I just wrapped up my CS degree at Wilfrid
-            Laurier, and I build backend systems for a living. I&apos;m into the
-            kind of problem that has to hold up when everything&apos;s on fire:
-            money moving, country shifting, a hundred things happening at once.
+            Laurier, and I build backend systems for a living. Outside of code,
+            I&apos;m happiest chasing something new: a country I haven&apos;t
+            been to, a skill I&apos;m bad at, anything a little past my comfort
+            zone.
           </p>
           <p
             className="mb-4"

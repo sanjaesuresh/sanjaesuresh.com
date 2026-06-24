@@ -224,6 +224,82 @@ a {
   filter: saturate(1.05) contrast(1.02);
 }
 
+/* Atlas: travel-map markers + hover tooltip */
+.atlas-pin {
+  display: block;
+  position: relative;
+  width: 11px;
+  height: 11px;
+  padding: 0;
+  border-radius: 50%;
+  border: 1.5px solid var(--accent);
+  background: var(--ink);
+  cursor: pointer;
+  transition: transform 0.15s, background 0.15s, box-shadow 0.15s;
+}
+
+.atlas-pin:hover,
+.atlas-pin[data-active] {
+  background: var(--accent);
+  transform: scale(1.35);
+  box-shadow: 0 0 0 4px rgba(91, 168, 204, 0.18);
+}
+
+/* Home base: filled signal-colour dot with a pulsing ring */
+.atlas-pin[data-home] {
+  border-color: var(--signal);
+  background: var(--signal);
+}
+
+.atlas-pin[data-home]:hover,
+.atlas-pin[data-home][data-active] {
+  background: var(--signal);
+  box-shadow: 0 0 0 4px rgba(201, 138, 94, 0.2);
+}
+
+.atlas-pin[data-home]::after {
+  content: "";
+  position: absolute;
+  inset: -5px;
+  border-radius: 50%;
+  border: 1px solid var(--signal);
+  animation: atlas-ping 2.4s ease-out infinite;
+  pointer-events: none;
+}
+
+@keyframes atlas-ping {
+  0% { transform: scale(0.6); opacity: 0.9; }
+  100% { transform: scale(1.9); opacity: 0; }
+}
+
+.atlas-tip {
+  position: absolute;
+  width: max-content;
+  max-width: 230px;
+  padding: 9px 12px;
+  border: 1px solid var(--rule-2);
+  background: var(--ink-3);
+  font-family: var(--font-ibm-plex-mono), ui-monospace, monospace;
+  font-size: 12px;
+  line-height: 1.5;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+  pointer-events: none;
+}
+
+.atlas-tip-head {
+  display: flex;
+  gap: 14px;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .atlas-pin[data-home]::after {
+    animation: none;
+  }
+}
+
 /* Base grid column templates (desktop). Overridden in the responsive block below. */
 .about-grid {
   grid-template-columns: 1fr 280px;

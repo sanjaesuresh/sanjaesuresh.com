@@ -3,6 +3,7 @@ import Masthead from "@/components/Masthead";
 import AboutSection from "@/components/AboutSection";
 import ExperienceSection from "@/components/ExperienceSection";
 import ProjectsSection from "@/components/ProjectsSection";
+import AtlasSection from "@/components/AtlasSection";
 import PhotographySection from "@/components/PhotographySection";
 import ContactSection from "@/components/ContactSection";
 
@@ -44,6 +45,7 @@ export default function Home() {
           <AboutSection />
           <ExperienceSection />
           <ProjectsSection />
+          <AtlasSection />
           <PhotographySection />
           <ContactSection />
           <footer

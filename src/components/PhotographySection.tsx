@@ -34,7 +34,7 @@ export default function PhotographySection() {
       style={{ borderColor: "var(--rule)" }}
     >
       <SectionHead
-        index="04"
+        index="05"
         title="frames"
         meta={`contact sheet · ${photos.length} frames`}
       />

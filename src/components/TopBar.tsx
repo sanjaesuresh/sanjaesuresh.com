@@ -32,6 +32,7 @@ export default function TopBar() {
             { href: "#about", label: "about" },
             { href: "#log", label: "log" },
             { href: "#projects", label: "projects" },
+            { href: "#atlas", label: "atlas" },
             { href: "#frames", label: "frames" },
             { href: "#contact", label: "contact" },
           ].map(({ href, label }) => (
