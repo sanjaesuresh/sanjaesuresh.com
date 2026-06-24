@@ -27,7 +27,7 @@ export default function AtlasSection() {
       />
 
       <p
-        className="-mt-4 mb-7 max-w-[60ch] text-[14px] leading-[1.6]"
+        className="-mt-4 mb-7 text-[14px] leading-[1.6]"
         style={{ fontFamily: "var(--font-space-grotesk)", color: "var(--mute)" }}
       >
         A map of everywhere I&apos;ve traveled. Places I&apos;ve visited, lived
