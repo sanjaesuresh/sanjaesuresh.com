@@ -7,7 +7,7 @@ export default function ContactSection() {
       className="border-b py-[56px]"
       style={{ borderColor: "var(--rule)" }}
     >
-      <SectionHead index="05" title="contact" meta="~/.config/reach-me" />
+      <SectionHead index="06" title="contact" meta="~/.config/reach-me" />
       <p
         className="mb-[26px] font-semibold"
         style={{
