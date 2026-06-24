@@ -32,7 +32,7 @@ export default function AboutSection() {
             style={{
               fontFamily: "var(--font-space-grotesk)",
               fontSize: "17.5px",
-              color: "#EFF4F9",
+              color: "#AEB9C4",
             }}
           >
             I&apos;ve been lucky with the teams I&apos;ve landed on. At{" "}
@@ -40,7 +40,7 @@ export default function AboutSection() {
             backend services for profile changes across HR and payroll for
             20,000+ companies. At{" "}
             <span style={{ color: "var(--accent)" }}>Activision</span>, I worked
-            on the Call of Duty store (yes, that one, 100M+ players). At{" "}
+            on the Call of Duty store (that one, 100M+ players). At{" "}
             <span style={{ color: "var(--accent)" }}>Nokia</span>,{" "}I built
             internal data tooling. Now I&apos;m a software engineer at{" "}
             <span style={{ color: "var(--accent)" }}>Bloomberg</span>.
@@ -49,7 +49,7 @@ export default function AboutSection() {
             style={{
               fontFamily: "var(--font-space-grotesk)",
               fontSize: "17.5px",
-              color: "#EFF4F9",
+              color: "#AEB9C4",
             }}
           >
             When I&apos;m not coding, you&apos;ll usually find me behind a

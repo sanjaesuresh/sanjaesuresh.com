@@ -346,8 +346,25 @@ a {
     padding: 40px 0 36px;
   }
 
+  /* The preamble is `white-space: pre`, so its longest line has a fixed
+     intrinsic width (~495px at 15px). On a phone that forces the whole left
+     column past the viewport, clipping both the text and the button row.
+     Scale the mono font down only as far as the viewport demands -- it stays
+     15px until it would overflow, then shrinks to keep the colon alignment
+     intact without horizontal clipping. */
+  .preamble-block {
+    font-size: clamp(8px, calc((100vw - 56px) / 37), 15px);
+  }
+
+  /* On mobile the masthead stacks to one column; without this the portrait
+     drops below the buttons as a small left-aligned box that reads as orphaned.
+     Center it, give it presence, and frame it so it's a deliberate part of
+     the hero rather than an afterthought. */
   .headshot-box {
-    max-width: 240px;
+    width: 100%;
+    max-width: 300px;
+    margin-inline: auto;
+    border: 1px solid var(--rule);
   }
 
   .about-grid {
