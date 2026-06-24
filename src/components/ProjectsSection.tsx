@@ -30,7 +30,7 @@ export default function ProjectsSection() {
           </div>
           <div>
             <h3
-              className="flex flex-wrap items-baseline gap-3 font-semibold"
+              className="flex flex-wrap items-center gap-3 font-semibold"
               style={{
                 fontFamily: "var(--font-space-grotesk)",
                 fontSize: "25px",

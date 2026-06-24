@@ -14,24 +14,22 @@ export default function AboutSection() {
       >
         <div>
           <p
-            className="mb-4"
+            className="about-lead mb-4"
             style={{
               fontFamily: "var(--font-space-grotesk)",
-              fontSize: "20px",
               color: "var(--paper)",
             }}
           >
             Hey, I&apos;m Sanjae. I just wrapped up my CS degree at Wilfrid
             Laurier, and I build backend systems for a living. Outside of code,
-            I&apos;m happiest chasing something new: a country I haven&apos;t
-            been to, a skill I&apos;m bad at, anything a little past my comfort
-            zone.
+            I&apos;m happiest chasing
+            something new: a country I haven&apos;t been to, a skill I&apos;m bad
+            at, anything a little past my comfort zone.
           </p>
           <p
-            className="mb-4"
+            className="about-body mb-4"
             style={{
               fontFamily: "var(--font-space-grotesk)",
-              fontSize: "17.5px",
               color: "#AEB9C4",
             }}
           >
@@ -46,9 +44,9 @@ export default function AboutSection() {
             <span style={{ color: "var(--accent)" }}>Bloomberg</span>.
           </p>
           <p
+            className="about-body"
             style={{
               fontFamily: "var(--font-space-grotesk)",
-              fontSize: "17.5px",
               color: "#AEB9C4",
             }}
           >

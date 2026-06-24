@@ -141,13 +141,34 @@ a {
   line-height: 1.7;
 }
 
-/* Preamble block: monospace key-value block above the CTA buttons */
+/* Preamble: monospace key/colon/value grid above the CTA buttons. A grid (vs.
+   space-padded text) keeps the colons in one column even when a row -- the name
+   -- uses a larger font, and lets long values wrap instead of forcing one wide
+   line. */
 .preamble-block {
+  display: grid;
+  grid-template-columns: max-content max-content 1fr;
+  align-items: baseline;
+  column-gap: 0;
+  row-gap: 10px;
   font-family: var(--font-mono), ui-monospace, monospace;
   font-size: 15px;
-  line-height: 2;
+  line-height: 1.35;
   color: var(--mute);
-  white-space: pre;
+}
+.preamble-block .pa-key {
+  white-space: nowrap;
+}
+.preamble-block .pa-sep {
+  padding: 0 0.7em;
+  white-space: nowrap;
+}
+/* Larger font for the name row; the grid columns keep its colon aligned. */
+.preamble-block .pa-key--lg {
+  font-size: 1.5em;
+}
+.preamble-block .pa-val {
+  min-width: 0; /* allow the value to wrap inside the 1fr column */
 }
 
 /* Masthead CTA button row */
@@ -317,6 +338,14 @@ a {
   grid-template-columns: 1fr 280px;
 }
 
+/* About copy. Sizes live here (not inline) so the mobile block can bump them. */
+.about-lead {
+  font-size: 20px;
+}
+.about-body {
+  font-size: 17.5px;
+}
+
 .log-entry {
   grid-template-columns: 150px 1fr;
 }
@@ -342,33 +371,45 @@ a {
   }
   .mast-grid {
     grid-template-columns: 1fr;
-    gap: 28px;
-    padding: 40px 0 36px;
+    gap: 20px;
+    padding: 32px 0 32px;
   }
 
-  /* The preamble is `white-space: pre`, so its longest line has a fixed
-     intrinsic width (~495px at 15px). On a phone that forces the whole left
-     column past the viewport, clipping both the text and the button row.
-     Scale the mono font down only as far as the viewport demands -- it stays
-     15px until it would overflow, then shrinks to keep the colon alignment
-     intact without horizontal clipping. */
+  /* The grid wraps long values, so the preamble can stay a comfortable reading
+     size on phones (no more shrinking it to fit one line). */
   .preamble-block {
-    font-size: clamp(8px, calc((100vw - 56px) / 37), 15px);
+    font-size: 13.6px;
   }
 
-  /* On mobile the masthead stacks to one column; without this the portrait
-     drops below the buttons as a small left-aligned box that reads as orphaned.
-     Center it, give it presence, and frame it so it's a deliberate part of
-     the hero rather than an afterthought. */
+  /* Smaller CTA buttons on mobile: ~30% less padding, label ~15% smaller. */
+  .mast-actions {
+    font-size: 11px;
+  }
+  .file-btn,
+  .file-btn-solid {
+    padding: 7px 13px;
+  }
+
+  /* On mobile the masthead stacks to one column; center and frame the portrait
+     so it's a deliberate part of the hero rather than an orphaned box. Kept
+     small here so it doesn't dominate the stacked layout. */
   .headshot-box {
     width: 100%;
-    max-width: 300px;
+    max-width: 150px;
     margin-inline: auto;
     border: 1px solid var(--rule);
   }
 
   .about-grid {
     grid-template-columns: 1fr !important;
+  }
+
+  /* About copy sizing on phones. */
+  .about-lead {
+    font-size: 17.6px;
+  }
+  .about-body {
+    font-size: 14.54px;
   }
 
   .log-entry {

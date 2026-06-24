@@ -18,30 +18,57 @@ export default function Masthead() {
     <div className="mast-grid border-b" style={{ borderColor: "var(--rule)" }}>
       {/* Left: preamble + actions */}
       <div>
-        <pre
-          className="preamble-block mb-9 text-[15px] leading-[2]"
+        <div
+          className="preamble-block mb-9"
           style={{
             fontFamily: "var(--font-ibm-plex-mono)",
             color: "var(--mute)",
           }}
         >
-          {"  name     : "}
-          <span style={{ color: "var(--paper)" }}>sanjae suresh</span>
-          {"\n  role     : "}
-          <span style={{ color: "var(--paper)" }}>software engineer</span>
-          {"\n  study    : "}
-          <span style={{ color: "var(--paper)" }}>
+          <span className="pa-key pa-key--lg">name</span>
+          <span className="pa-sep pa-key--lg">:</span>
+          <span
+            className="pa-val"
+            style={{
+              color: "var(--accent)",
+              fontWeight: 600,
+              fontSize: "1.5em",
+            }}
+          >
+            sanjae suresh
+          </span>
+
+          <span className="pa-key">role</span>
+          <span className="pa-sep">:</span>
+          <span className="pa-val" style={{ color: "var(--paper)" }}>
+            software engineer
+          </span>
+
+          <span className="pa-key">study</span>
+          <span className="pa-sep">:</span>
+          <span className="pa-val" style={{ color: "var(--paper)" }}>
             bsc computer science · wilfrid laurier &apos;26
           </span>
-          {"\n  also     : "}
-          <span style={{ color: "var(--paper)" }}>photographer</span>
-          {"\n  based    : "}
-          <span style={{ color: "var(--paper)" }}>new york city</span>
-          {"\n  status   : "}
-          <span style={{ color: "var(--accent)" }}>swe</span>
-          {" @ bloomberg"}
-          <span className="blink-cursor" aria-hidden="true" />
-        </pre>
+
+          <span className="pa-key">also</span>
+          <span className="pa-sep">:</span>
+          <span className="pa-val" style={{ color: "var(--paper)" }}>
+            photographer
+          </span>
+
+          <span className="pa-key">based</span>
+          <span className="pa-sep">:</span>
+          <span className="pa-val" style={{ color: "var(--paper)" }}>
+            new york city
+          </span>
+
+          <span className="pa-key">status</span>
+          <span className="pa-sep">:</span>
+          <span className="pa-val">
+            <span style={{ color: "var(--accent)" }}>swe</span> @ bloomberg
+            <span className="blink-cursor" aria-hidden="true" />
+          </span>
+        </div>
 
         <div
           className="mast-actions flex flex-wrap gap-[14px] text-[13px]"
