@@ -108,12 +108,15 @@ export default function AtlasSection() {
                   type="button"
                   className="atlas-pin"
                   data-home={t.home ? "" : undefined}
+                  data-lived={t.lived ? "" : undefined}
                   data-active={isActive ? "" : undefined}
                   aria-label={[
                     t.country !== t.city ? `${t.city}, ${t.country}` : t.city,
-                    `· ${t.when}`,
+                    t.when ? `· ${t.when}` : "",
                     t.note ? `· ${t.note}` : "",
-                  ].join(" ")}
+                  ]
+                    .filter(Boolean)
+                    .join(" ")}
                   onMouseEnter={() => setActive(t.id)}
                   onFocus={() => setActive(t.id)}
                   onBlur={() => setActive(null)}
@@ -133,7 +136,9 @@ export default function AtlasSection() {
                   >
                     <div className="atlas-tip-head">
                       <span style={{ color: "var(--accent)" }}>{t.city}</span>
-                      <span style={{ color: "var(--dim)" }}>{t.when}</span>
+                      {t.when && (
+                        <span style={{ color: "var(--dim)" }}>{t.when}</span>
+                      )}
                     </div>
                     {t.country !== t.city && (
                       <div style={{ color: "var(--mute)" }}>{t.country}</div>
@@ -158,8 +163,12 @@ export default function AtlasSection() {
         className="mt-[14px] text-[12px]"
         style={{ fontFamily: "var(--font-ibm-plex-mono)", color: "var(--dim)" }}
       >
-        {"// hover or tap a marker for details · "}
+        {"// hover or tap a marker · "}
         <span style={{ color: "var(--signal)" }}>◎</span> home base
+        {"  ·  "}
+        <span style={{ color: "var(--lived)" }}>●</span> lived
+        {"  ·  "}
+        <span style={{ color: "var(--accent)" }}>○</span> visited
       </p>
     </section>
   );

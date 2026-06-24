@@ -9,10 +9,12 @@ export interface Trip {
   /** Decimal degrees. East/North positive (e.g. Toronto: lon -79.38, lat 43.65). */
   lon: number;
   lat: number;
-  /** Year, range, or status — e.g. "2024", "2024 & 2025", "live here now". */
-  when: string;
+  /** Year, range, or status — e.g. "2024", "2024 & 2025". Optional. */
+  when?: string;
   /** Optional one-line note shown under the place. */
   note?: string;
+  /** A place I've lived — rendered in light orange instead of cyan. */
+  lived?: boolean;
   /** Marks the home base — pulsing ring instead of a plain dot. */
   home?: boolean;
 }
@@ -41,18 +43,18 @@ export const trips: Trip[] = [
   { id: "tokyo", city: "Tokyo", country: "Japan", lon: 139.69, lat: 35.69, when: "2025" },
   { id: "osaka", city: "Osaka", country: "Japan", lon: 135.5, lat: 34.69, when: "2025" },
   { id: "kyoto", city: "Kyoto", country: "Japan", lon: 135.77, lat: 35.01, when: "2025" },
-  { id: "vancouver", city: "Vancouver", country: "Canada", lon: -123.12, lat: 49.28, when: "2025", note: "Lived here." },
+  { id: "vancouver", city: "Vancouver", country: "Canada", lon: -123.12, lat: 49.28, when: "2025", note: "Lived here.", lived: true },
 
   // 2026
   { id: "hanoi", city: "Hanoi", country: "Vietnam", lon: 105.83, lat: 21.03, when: "2026" },
   { id: "da-nang", city: "Da Nang", country: "Vietnam", lon: 108.22, lat: 16.05, when: "2026" },
   { id: "ho-chi-minh", city: "Ho Chi Minh City", country: "Vietnam", lon: 106.66, lat: 10.82, when: "2026" },
   { id: "maui", city: "Maui", country: "United States", lon: -156.33, lat: 20.8, when: "2026", note: "Hawaii." },
-  { id: "san-francisco", city: "San Francisco", country: "United States", lon: -122.42, lat: 37.77, when: "2026", note: "Lived here." },
+  { id: "san-francisco", city: "San Francisco", country: "United States", lon: -122.42, lat: 37.77, when: "2026", note: "Lived here.", lived: true },
   { id: "san-diego", city: "San Diego", country: "United States", lon: -117.16, lat: 32.72, when: "2026" },
 
   // Home roots
-  { id: "toronto", city: "Toronto", country: "Canada", lon: -79.38, lat: 43.65, when: "grew up here" },
+  { id: "toronto", city: "Toronto", country: "Canada", lon: -79.38, lat: 43.65, note: "Grew up here.", lived: true },
   { id: "new-york", city: "New York", country: "United States", lon: -74.01, lat: 40.71, when: "live here now", note: "Home base.", home: true },
 ];
 

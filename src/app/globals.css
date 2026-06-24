@@ -13,6 +13,7 @@
   --accent: #5BA8CC;
   --accent-dim: #3E7E9C;
   --signal: #C98A5E;
+  --lived: #E6B17E;
 }
 
 @theme inline {
@@ -243,6 +244,17 @@ a {
   background: var(--accent);
   transform: scale(1.35);
   box-shadow: 0 0 0 4px rgba(91, 168, 204, 0.18);
+}
+
+/* Lived: light-orange dot to set residences apart from visited cities */
+.atlas-pin[data-lived] {
+  border-color: var(--lived);
+}
+
+.atlas-pin[data-lived]:hover,
+.atlas-pin[data-lived][data-active] {
+  background: var(--lived);
+  box-shadow: 0 0 0 4px rgba(230, 177, 126, 0.2);
 }
 
 /* Home base: filled signal-colour dot with a pulsing ring */
