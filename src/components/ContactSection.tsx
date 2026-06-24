@@ -18,7 +18,7 @@ export default function ContactSection() {
           letterSpacing: "-0.01em",
         }}
       >
-        Building something, or just want to talk shop? Ping me.
+        Contact me here :)
       </p>
 
       <div

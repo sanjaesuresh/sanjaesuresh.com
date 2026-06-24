@@ -20,8 +20,8 @@ export default function AboutSection() {
               color: "var(--paper)",
             }}
           >
-            Hey, I&apos;m Sanjae. I just wrapped up my CS degree at Wilfrid
-            Laurier, and I build backend systems for a living. Outside of code,
+            Hey, I&apos;m Sanjae. I&apos;m a software engineer at Bloomberg, and
+            I build backend systems for a living. Outside of programming,
             I&apos;m happiest chasing
             something new: a country I haven&apos;t been to, a skill I&apos;m bad
             at, anything a little past my comfort zone.
@@ -40,20 +40,7 @@ export default function AboutSection() {
             <span style={{ color: "var(--accent)" }}>Activision</span>, I worked
             on the Call of Duty store (that one, 100M+ players). At{" "}
             <span style={{ color: "var(--accent)" }}>Nokia</span>,{" "}I built
-            internal data tooling. Now I&apos;m a software engineer at{" "}
-            <span style={{ color: "var(--accent)" }}>Bloomberg</span>.
-          </p>
-          <p
-            className="about-body"
-            style={{
-              fontFamily: "var(--font-space-grotesk)",
-              color: "#AEB9C4",
-            }}
-          >
-            When I&apos;m not coding, you&apos;ll usually find me behind a
-            camera. It&apos;s a completely different kind of problem-solving,
-            and weirdly it&apos;s made me a better engineer. Turns out half this job is just composition in
-            disguise.
+            internal data tooling.
           </p>
         </div>
 

@@ -107,7 +107,7 @@ export default function ExperienceSection() {
               {role.stack && (
                 <div className="mt-3 text-[12px]" style={{ color: "var(--dim)" }}>
                   <span style={{ color: "var(--mute)", fontWeight: 500 }}>
-                    stack
+                    stack:
                   </span>
                   {"  "}
                   {role.stack}

@@ -83,7 +83,7 @@ export default function PhotographySection() {
                     className="frame-img block h-auto w-full"
                   />
                   <div
-                    className="flex justify-between border-t px-[10px] py-2 text-[11px]"
+                    className="flex justify-between gap-[10px] border-t px-[10px] py-2 text-[11px]"
                     style={{
                       fontFamily: "var(--font-ibm-plex-mono)",
                       color: "var(--mute)",
