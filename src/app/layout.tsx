@@ -28,12 +28,21 @@ export const metadata: Metadata = {
     url: "https://sanjaesuresh.com",
     siteName: "Sanjae Suresh",
     type: "website",
+    images: [
+      {
+        url: "/og.png",
+        width: 1200,
+        height: 630,
+        alt: "Sanjae Suresh — software engineer",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "Sanjae Suresh · Software Engineer",
     description:
       "Software engineer at Bloomberg. Backend systems, distributed infrastructure, and photography.",
+    images: ["/og.png"],
   },
   alternates: {
     canonical: "https://sanjaesuresh.com",
