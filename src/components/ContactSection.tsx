@@ -8,18 +8,6 @@ export default function ContactSection() {
       style={{ borderColor: "var(--rule)" }}
     >
       <SectionHead index="06" title="contact" meta="~/.config/reach-me" />
-      <p
-        className="mb-[26px] font-semibold"
-        style={{
-          fontFamily: "var(--font-space-grotesk)",
-          fontSize: "clamp(22px, 3.5vw, 32px)",
-          color: "var(--paper)",
-          maxWidth: "18ch",
-          letterSpacing: "-0.01em",
-        }}
-      >
-        Contact me here :)
-      </p>
 
       <div
         className="border p-[28px] text-[15px] leading-[2.1]"
