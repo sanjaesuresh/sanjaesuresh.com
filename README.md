@@ -1,36 +1,62 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# sanjaesuresh.com
 
-## Getting Started
+Personal portfolio for Sanjae Suresh — software engineer and photographer. A
+single-page site with a cyanotype, field-notes aesthetic. Live at
+[sanjaesuresh.com](https://sanjaesuresh.com).
 
-First, run the development server:
+## Stack
+
+- [Next.js 16](https://nextjs.org) (App Router, Turbopack) + React 19
+- TypeScript
+- [Tailwind CSS v4](https://tailwindcss.com)
+- [`motion`](https://motion.dev) for animation, [`yet-another-react-lightbox`](https://yet-another-react-lightbox.com) for the photo gallery
+- Fonts: IBM Plex Mono (mono UI) + Space Grotesk (display), via `next/font`
+
+## Run it
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install
+npm run dev      # dev server at http://localhost:3000
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Other scripts: `npm run build` (production build), `npm start` (serve the
+build), `npm run lint`.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Layout
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+The page is composed in `src/app/page.tsx` from section components in
+`src/components/` — in order: Masthead, About, Experience, Projects, Atlas (an
+interactive travel map), Photography, Contact. Styling and the cyanotype color
+tokens live in `src/app/globals.css`.
 
-## Learn More
+Section content is data-driven — edit these rather than the components:
 
-To learn more about Next.js, take a look at the following resources:
+| File | Drives |
+| --- | --- |
+| `src/data/experience.ts` | Work history / log entries |
+| `src/data/projects.ts` | Projects list |
+| `src/data/travel.ts` | Places for the Atlas map (city pins, notes) |
+| `src/data/photos.ts` | Photo gallery manifest (generated — see below) |
+| `src/data/worldPaths.ts` | Atlas world-map SVG paths (generated — see below) |
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Drop-in assets live in `content/` (resume PDF, source photos) and are published
+to `public/` for the site to serve.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Content scripts
 
-## Deploy on Vercel
+Two one-off generators keep the data files in sync with real content:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- **Photos** — drop images (JPG / HEIC / DNG / PNG) into `content/photography/`,
+  then run `python3 scripts/build-photos.py`. It downsizes each to a web JPEG in
+  `public/photography/`, reads EXIF (focal / aperture / shutter / ISO) for the
+  contact-sheet captions, and regenerates `src/data/photos.ts`. Uses macOS
+  built-ins (`sips`, `mdls`) plus Pillow.
+- **Map** — `node scripts/build-map.mjs <world.geojson>` projects a Natural
+  Earth countries GeoJSON into the SVG paths in `src/data/worldPaths.ts`. Re-run
+  only to regenerate the base map.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Note on Next.js
+
+This repo pins a newer Next.js than most references describe — see `AGENTS.md`.
+Check `node_modules/next/dist/docs/` for the version actually installed before
+relying on older conventions.
