@@ -50,20 +50,35 @@ export const projects: Project[] = [
     ],
   },
   {
-    id: "claude-code-toolkit",
+    id: "s-suite",
     num: "[02]",
-    name: "Claude Code Toolkit",
+    name: "s.suite",
     version: "dev tooling",
     status: "active",
     statusClass: "active",
     description:
-      "A portable Claude Code setup that turns the assistant into a team of specialists: 25 skills and 18 subagents for planning, review, debugging, and release, plus safety hooks, guardrails, and a one-shot bootstrap install.",
+      "A portable Claude Code setup that turns the assistant into a team of specialists: 42 skills and 19 subagents for planning, review, debugging, and release, plus safety hooks, guardrails, and a one-shot bootstrap install.",
     deps: "shell · markdown · git hooks · claude code",
     links: [
       {
         label: "github ↗",
-        href: "https://github.com/sanjaesuresh/claude-code-toolkit",
+        href: "https://github.com/sanjaesuresh/s.suite",
       },
+    ],
+  },
+  {
+    id: "armory",
+    num: "[03]",
+    name: "Armory",
+    version: "v1.0 · web",
+    status: "shipped",
+    statusClass: "shipped",
+    description:
+      "A directory of proven, role-based AI setups. Pick a template, customize it with plain-language forms, test-drive it against real scenarios, then export a config you paste into your own Claude or ChatGPT. A deterministic compiler turns your answers into the finished setup; curated, AI-generated, and community submissions share one schema and pass a review-before-publish gate.",
+    deps: "next.js · typescript · react · supabase · anthropic api",
+    links: [
+      { label: "website ↗", href: "https://armoryhq.dev" },
+      { label: "github ↗", href: "https://github.com/sanjaesuresh/armory-ai" },
     ],
   },
 ];
