@@ -34,8 +34,8 @@ export const experience: Role[] = [
     org: "Rippling",
     location: "San Francisco, CA",
     bullets: [
-      "built Python backend services for complex profile mutations & effective-dated state across HR / payroll / IT systems serving 20,000+ companies",
-      "designed transaction-safe, versioned update logic that cut state-inconsistency bugs 35%; refactored REST APIs for -22% mutation latency",
+      "built Fast Transitions, a Python engine for low-latency profile mutations applying effective-dated state across HR / payroll / IT systems for 20,000+ companies",
+      "designed transaction-safe, versioned update logic for stackable concurrent edits that cut state-inconsistency bugs 35%; refactored REST APIs for -22% mutation latency",
     ],
     stack: "Python · REST · distributed systems",
   },
@@ -79,8 +79,8 @@ export const experience: Role[] = [
     org: "Civiconnect",
     location: "Toronto, ON",
     bullets: [
-      "built full-stack features for a hospital health app (React · Node · Supabase) with real-time patient sync + secure staff auth",
-      "optimized REST APIs with async I/O & caching for +15% concurrency and faster clinical data access",
+      "built full-stack features for a real estate marketplace (React · Node · Supabase) with real-time listing updates + secure buyer/agent auth",
+      "optimized REST APIs with async I/O & caching for +15% concurrency and faster property search & listing data",
     ],
     stack: "React · Node · Supabase",
   },

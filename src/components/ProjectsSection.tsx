@@ -8,9 +8,10 @@ export default function ProjectsSection() {
       className="border-b py-[56px]"
       style={{ borderColor: "var(--rule)" }}
     >
-      <SectionHead index="03" title="projects" meta="3 tracked" />
+      <SectionHead index="03" title="projects" meta={`${projects.length} tracked`} />
 
-      {projects.map((proj) => (
+      {/* newest first: source list is chronological, so reverse for display */}
+      {[...projects].reverse().map((proj, i) => (
         <div
           key={proj.id}
           className="grid border-t py-[26px]"
@@ -26,7 +27,7 @@ export default function ProjectsSection() {
               color: "var(--accent)",
             }}
           >
-            {proj.num}
+            {`[${String(i).padStart(2, "0")}]`}
           </div>
           <div>
             <h3

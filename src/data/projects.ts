@@ -5,7 +5,6 @@ export interface ProjectLink {
 
 export interface Project {
   id: string;
-  num: string;
   name: string;
   version: string;
   status: string;
@@ -18,7 +17,6 @@ export interface Project {
 export const projects: Project[] = [
   {
     id: "parlance",
-    num: "[00]",
     name: "Parlance",
     version: "v1.0 · iOS",
     status: "shipped",
@@ -37,7 +35,6 @@ export const projects: Project[] = [
   },
   {
     id: "cuedrop",
-    num: "[01]",
     name: "CueDrop",
     version: "v0.9 · AI",
     status: "active",
@@ -51,7 +48,6 @@ export const projects: Project[] = [
   },
   {
     id: "s-suite",
-    num: "[02]",
     name: "s.suite",
     version: "dev tooling",
     status: "active",
@@ -68,7 +64,6 @@ export const projects: Project[] = [
   },
   {
     id: "armory",
-    num: "[03]",
     name: "Armory",
     version: "v1.0 · web",
     status: "shipped",
