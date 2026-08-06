@@ -2,7 +2,7 @@
 
 import dynamic from "next/dynamic";
 import Image from "next/image";
-import { useState, useCallback } from "react";
+import { useState, useEffect, useCallback } from "react";
 import { photos } from "@/data/photos";
 import SectionHead from "./SectionHead";
 
@@ -16,16 +16,28 @@ export default function PhotographySection() {
   const [lightboxOpen, setLightboxOpen] = useState(false);
   const [lightboxIndex, setLightboxIndex] = useState(0);
   const [page, setPage] = useState(0);
+  // shuffled after mount (not during render) so the statically-rendered
+  // markup still matches on hydration; each reload gets a fresh order
+  const [shuffled, setShuffled] = useState(photos);
+
+  useEffect(() => {
+    const arr = [...photos];
+    for (let i = arr.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [arr[i], arr[j]] = [arr[j], arr[i]];
+    }
+    setShuffled(arr);
+  }, []);
 
   const openLightbox = useCallback((index: number) => {
     setLightboxIndex(index);
     setLightboxOpen(true);
   }, []);
 
-  const slides = photos.map((p) => ({ src: p.src, alt: p.alt }));
-  const pageCount = Math.max(1, Math.ceil(photos.length / PAGE_SIZE));
+  const slides = shuffled.map((p) => ({ src: p.src, alt: p.alt }));
+  const pageCount = Math.max(1, Math.ceil(shuffled.length / PAGE_SIZE));
   const start = page * PAGE_SIZE;
-  const pagePhotos = photos.slice(start, start + PAGE_SIZE);
+  const pagePhotos = shuffled.slice(start, start + PAGE_SIZE);
 
   return (
     <section

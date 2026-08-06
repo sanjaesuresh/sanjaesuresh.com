@@ -18,10 +18,9 @@ export default function AboutSection() {
             style={{ color: "var(--paper)" }}
           >
             Hey, I&apos;m Sanjae. I&apos;m a software engineer at Bloomberg, and
-            I build backend systems for a living. Outside of programming,
-            I&apos;m happiest chasing
-            something new: a country I haven&apos;t been to, a skill I&apos;m bad
-            at, anything a little past my comfort zone.
+            I build backend systems for a living. Outside of work, I love
+            travelling, learning new skills and just pushing past my comfort
+            zone.
           </p>
           <p
             className="about-body mb-4"

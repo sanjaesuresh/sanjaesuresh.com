@@ -76,4 +76,33 @@ export const projects: Project[] = [
       { label: "github ↗", href: "https://github.com/sanjaesuresh/armory-ai" },
     ],
   },
+  {
+    id: "flight-tracker",
+    name: "flight-tracker",
+    version: "v1.0 · web",
+    status: "shipped",
+    statusClass: "shipped",
+    description:
+      "A $0/month cheap-flight tracker for one route (NYC ↔ Toronto). An hourly poller queries Google Flights, stores fare snapshots in Postgres, and emails a booking deep-link the moment a round trip gets cheap; a React dashboard shows which weekends are cheapest with per-option price history. Runs entirely on free tiers.",
+    deps: "python · neon postgres · react · vite · github actions · vercel",
+    links: [
+      {
+        label: "github ↗",
+        href: "https://github.com/sanjaesuresh/flight-tracker",
+      },
+    ],
+  },
+  {
+    id: "bouncer",
+    name: "Bouncer",
+    version: "v0.1 · cli",
+    status: "active",
+    statusClass: "active",
+    description:
+      "A context compiler for AI coding agents — LLVM, but for context windows. It sits between the agent and the model, converts repository state, history, and tool output into a compact intermediate representation, and emits an optimized prompt for each target model: smaller, cheaper, sharper. First shipped piece is a recording proxy that measures where an agent's tokens actually go.",
+    deps: "typescript · node · anthropic api",
+    links: [
+      { label: "github ↗", href: "https://github.com/sanjaesuresh/bouncer" },
+    ],
+  },
 ];

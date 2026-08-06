@@ -22,14 +22,6 @@ export default function AtlasSection() {
     >
       <SectionHead index="04" title="atlas" />
 
-      <p
-        className="-mt-4 mb-7 text-[14px] leading-[1.6]"
-        style={{ color: "var(--mute)" }}
-      >
-        A map of everywhere I&apos;ve traveled. Places I&apos;ve visited, lived
-        in, or currently call home.
-      </p>
-
       <div
         className="relative border"
         style={{

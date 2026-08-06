@@ -1,10 +1,34 @@
 "use client";
 
 import Image from "next/image";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 export default function Masthead() {
   const [hasHeadshot, setHasHeadshot] = useState(false);
+  const nameRef = useRef<HTMLHeadingElement>(null);
+
+  // ripple: letters near the cursor swell from 600 up to 800 weight,
+  // falling off over ~90px. skipped entirely under reduced motion.
+  const handleNameMove = (e: React.MouseEvent) => {
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    nameRef.current
+      ?.querySelectorAll<HTMLElement>("[data-ch]")
+      .forEach((s) => {
+        const r = s.getBoundingClientRect();
+        const d = Math.abs(e.clientX - (r.left + r.width / 2));
+        s.style.fontWeight = String(
+          Math.round(600 + Math.max(0, 1 - d / 90) * 200)
+        );
+      });
+  };
+
+  const handleNameLeave = () => {
+    nameRef.current
+      ?.querySelectorAll<HTMLElement>("[data-ch]")
+      .forEach((s) => {
+        s.style.fontWeight = "";
+      });
+  };
 
   useEffect(() => {
     // We'll attempt to load the image; if it 404s we show placeholder
@@ -18,23 +42,28 @@ export default function Masthead() {
     <div className="mast-grid border-b" style={{ borderColor: "var(--rule)" }}>
       {/* Left: preamble + actions */}
       <div>
+        <h1
+          ref={nameRef}
+          className="mb-2 text-[52px] font-semibold leading-tight"
+          style={{ color: "var(--accent)" }}
+          aria-label="sanjae suresh"
+          onMouseMove={handleNameMove}
+          onMouseLeave={handleNameLeave}
+        >
+          {/* per-letter spans so each glyph's weight can follow the cursor */}
+          <span aria-hidden="true">
+            {"sanjae suresh".split("").map((ch, i) => (
+              <span key={i} className="name-letter" data-ch>
+                {ch === " " ? " " : ch}
+              </span>
+            ))}
+          </span>
+        </h1>
+
         <div
           className="preamble-block mb-9"
           style={{ color: "var(--mute)" }}
         >
-          <span className="pa-key pa-key--lg">name</span>
-          <span className="pa-sep pa-key--lg">:</span>
-          <span
-            className="pa-val"
-            style={{
-              color: "var(--accent)",
-              fontWeight: 600,
-              fontSize: "1.5em",
-            }}
-          >
-            sanjae suresh
-          </span>
-
           <span className="pa-key">role</span>
           <span className="pa-sep">:</span>
           <span className="pa-val" style={{ color: "var(--paper)" }}>
