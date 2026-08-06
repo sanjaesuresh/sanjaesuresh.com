@@ -1,15 +1,11 @@
 interface SectionHeadProps {
   index: string;
   title: string;
-  meta: string;
 }
 
-export default function SectionHead({ index, title, meta }: SectionHeadProps) {
+export default function SectionHead({ index, title }: SectionHeadProps) {
   return (
-    <div
-      className="mb-8 flex items-baseline gap-[14px]"
-      style={{ fontFamily: "var(--font-ibm-plex-mono)" }}
-    >
+    <div className="mb-8 flex items-baseline gap-[14px]">
       <span className="text-[13px]" style={{ color: "var(--accent)" }}>
         {index}
       </span>
@@ -24,9 +20,6 @@ export default function SectionHead({ index, title, meta }: SectionHeadProps) {
         style={{ background: "var(--rule)" }}
         aria-hidden="true"
       />
-      <span className="text-[12px]" style={{ color: "var(--dim)" }}>
-        {meta}
-      </span>
     </div>
   );
 }

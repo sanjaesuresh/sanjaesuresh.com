@@ -16,21 +16,19 @@ export default function TopBar() {
       >
         <span
           className="whitespace-nowrap text-[13px]"
-          style={{ fontFamily: "var(--font-ibm-plex-mono)", color: "var(--mute)" }}
+          style={{ color: "var(--mute)" }}
         >
-          <span style={{ color: "var(--accent)" }}>~</span>
-          /sanjae-suresh{" "}
+          <span style={{ color: "var(--accent)" }}>sanjae suresh</span>{" "}
           <span style={{ color: "var(--dim)" }}>·</span> portfolio
         </span>
 
         <nav
           className="nav-links flex gap-[22px] text-[13px]"
-          style={{ fontFamily: "var(--font-ibm-plex-mono)" }}
           aria-label="Primary navigation"
         >
           {[
             { href: "#about", label: "about" },
-            { href: "#log", label: "log" },
+            { href: "#log", label: "experience" },
             { href: "#projects", label: "projects" },
             { href: "#atlas", label: "atlas" },
             { href: "#frames", label: "frames" },
@@ -44,7 +42,7 @@ export default function TopBar() {
 
         <span
           className="status-chip flex items-center gap-2 text-[12px]"
-          style={{ fontFamily: "var(--font-ibm-plex-mono)", color: "var(--mute)" }}
+          style={{ color: "var(--mute)" }}
         >
           <span
             className="inline-block"

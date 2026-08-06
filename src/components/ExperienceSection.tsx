@@ -23,8 +23,8 @@ export default function ExperienceSection() {
       className="border-b py-[56px]"
       style={{ borderColor: "var(--rule)" }}
     >
-      <SectionHead index="02" title="log" meta="git log --experience" />
-      <div style={{ fontFamily: "var(--font-ibm-plex-mono)" }}>
+      <SectionHead index="02" title="experience" />
+      <div>
         {experience.map((role) => (
           <div
             key={role.id}
@@ -69,20 +69,14 @@ export default function ExperienceSection() {
             <div>
               <h3
                 className="text-[19px] font-semibold"
-                style={{
-                  fontFamily: "var(--font-space-grotesk)",
-                  color: "var(--paper)",
-                }}
+                style={{ color: "var(--paper)" }}
               >
                 {role.title} ·{" "}
                 <span style={{ color: "var(--accent)" }}>{role.org}</span>
               </h3>
               <div
                 className="mt-1 text-[12px]"
-                style={{
-                  fontFamily: "var(--font-ibm-plex-mono)",
-                  color: "var(--dim)",
-                }}
+                style={{ color: "var(--dim)" }}
               >
                 {role.location}
               </div>

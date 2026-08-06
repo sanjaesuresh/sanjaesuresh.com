@@ -8,7 +8,7 @@ export default function ProjectsSection() {
       className="border-b py-[56px]"
       style={{ borderColor: "var(--rule)" }}
     >
-      <SectionHead index="03" title="projects" meta={`${projects.length} tracked`} />
+      <SectionHead index="03" title="projects" />
 
       {/* newest first: source list is chronological, so reverse for display */}
       {[...projects].reverse().map((proj, i) => (
@@ -22,18 +22,14 @@ export default function ProjectsSection() {
         >
           <div
             className="pt-[6px] text-[12px]"
-            style={{
-              fontFamily: "var(--font-ibm-plex-mono)",
-              color: "var(--accent)",
-            }}
+            style={{ color: "var(--accent)" }}
           >
-            {`[${String(i).padStart(2, "0")}]`}
+            {String(i + 1).padStart(2, "0")}
           </div>
           <div>
             <h3
               className="flex flex-wrap items-center gap-3 font-semibold"
               style={{
-                fontFamily: "var(--font-space-grotesk)",
                 fontSize: "25px",
                 color: "var(--paper)",
               }}
@@ -42,7 +38,6 @@ export default function ProjectsSection() {
               <span
                 className="border px-[7px] py-[2px] text-[12px]"
                 style={{
-                  fontFamily: "var(--font-ibm-plex-mono)",
                   color: "var(--mute)",
                   borderColor: "var(--rule-2)",
                   fontWeight: 400,
@@ -53,7 +48,6 @@ export default function ProjectsSection() {
               <span
                 className="text-[11px] uppercase tracking-[.08em]"
                 style={{
-                  fontFamily: "var(--font-ibm-plex-mono)",
                   color:
                     proj.statusClass === "shipped"
                       ? "var(--accent)"
@@ -68,7 +62,6 @@ export default function ProjectsSection() {
             <p
               className="my-3 text-[16px]"
               style={{
-                fontFamily: "var(--font-space-grotesk)",
                 color: "var(--paper)",
                 opacity: 0.9,
                 maxWidth: "64ch",
@@ -79,18 +72,12 @@ export default function ProjectsSection() {
 
             <div
               className="mb-[14px] text-[12.5px]"
-              style={{
-                fontFamily: "var(--font-ibm-plex-mono)",
-                color: "var(--mute)",
-              }}
+              style={{ color: "var(--mute)" }}
             >
-              <span style={{ color: "var(--dim)" }}>deps:</span> {proj.deps}
+              <span style={{ color: "var(--dim)" }}>built with</span> {proj.deps}
             </div>
 
-            <div
-              className="flex gap-5 text-[13px]"
-              style={{ fontFamily: "var(--font-ibm-plex-mono)" }}
-            >
+            <div className="flex gap-5 text-[13px]">
               {proj.links.map((link) => (
                 <a
                   key={link.href}

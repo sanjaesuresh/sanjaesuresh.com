@@ -7,12 +7,11 @@ export default function ContactSection() {
       className="border-b py-[56px]"
       style={{ borderColor: "var(--rule)" }}
     >
-      <SectionHead index="06" title="contact" meta="~/.config/reach-me" />
+      <SectionHead index="06" title="contact" />
 
       <div
         className="border p-[28px] text-[15px] leading-[2.1]"
         style={{
-          fontFamily: "var(--font-ibm-plex-mono)",
           borderColor: "var(--rule)",
           background: "var(--ink-2)",
           maxWidth: "540px",

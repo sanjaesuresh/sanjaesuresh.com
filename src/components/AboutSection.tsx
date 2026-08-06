@@ -7,7 +7,7 @@ export default function AboutSection() {
       className="border-b py-[56px]"
       style={{ borderColor: "var(--rule)" }}
     >
-      <SectionHead index="01" title="about" meta="~/about.md" />
+      <SectionHead index="01" title="about" />
       <div
         className="about-grid grid gap-[48px] items-start"
         style={{ gridTemplateColumns: "1fr 280px" }}
@@ -15,10 +15,7 @@ export default function AboutSection() {
         <div>
           <p
             className="about-lead mb-4"
-            style={{
-              fontFamily: "var(--font-space-grotesk)",
-              color: "var(--paper)",
-            }}
+            style={{ color: "var(--paper)" }}
           >
             Hey, I&apos;m Sanjae. I&apos;m a software engineer at Bloomberg, and
             I build backend systems for a living. Outside of programming,
@@ -28,10 +25,7 @@ export default function AboutSection() {
           </p>
           <p
             className="about-body mb-4"
-            style={{
-              fontFamily: "var(--font-space-grotesk)",
-              color: "#AEB9C4",
-            }}
+            style={{ color: "#AEB9C4" }}
           >
             I&apos;ve been lucky with the teams I&apos;ve landed on. At{" "}
             <span style={{ color: "var(--accent)" }}>Rippling</span>, I built
@@ -48,7 +42,6 @@ export default function AboutSection() {
         <div
           className="border p-5 text-[13px] leading-[1.95]"
           style={{
-            fontFamily: "var(--font-ibm-plex-mono)",
             borderColor: "var(--rule)",
             background: "var(--ink-2)",
           }}

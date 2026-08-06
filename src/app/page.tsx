@@ -50,10 +50,7 @@ export default function Home() {
           <ContactSection />
           <footer
             className="flex flex-wrap justify-between gap-2 pb-[60px] pt-[30px] text-[12px]"
-            style={{
-              fontFamily: "var(--font-ibm-plex-mono)",
-              color: "var(--dim)",
-            }}
+            style={{ color: "var(--dim)" }}
           >
             <span>
               &copy; 2026{" "}

@@ -28,8 +28,7 @@
   --color-accent: var(--accent);
   --color-accent-dim: var(--accent-dim);
   --color-signal: var(--signal);
-  --font-sans: var(--font-space-grotesk);
-  --font-mono: var(--font-ibm-plex-mono);
+  --font-sans: var(--font-inter);
 }
 
 /* Reset lives in @layer base so Tailwind's utility layer (mx-auto, mb-*, px-*, py-*)
@@ -49,7 +48,7 @@ html {
 body {
   background: var(--ink);
   color: var(--paper);
-  font-family: var(--font-space-grotesk), system-ui, sans-serif;
+  font-family: var(--font-inter), system-ui, sans-serif;
   font-size: 16px;
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
@@ -135,13 +134,12 @@ a {
 
 /* Headshot placeholder (shown when headshot.jpg is absent) */
 .headshot-placeholder {
-  font-family: var(--font-mono), ui-monospace, monospace;
   font-size: 12px;
   color: var(--dim);
   line-height: 1.7;
 }
 
-/* Preamble: monospace key/colon/value grid above the CTA buttons. A grid (vs.
+/* Preamble: key/colon/value grid above the CTA buttons. A grid (vs.
    space-padded text) keeps the colons in one column even when a row -- the name
    -- uses a larger font, and lets long values wrap instead of forcing one wide
    line. */
@@ -151,7 +149,6 @@ a {
   align-items: baseline;
   column-gap: 0;
   row-gap: 10px;
-  font-family: var(--font-mono), ui-monospace, monospace;
   font-size: 15px;
   line-height: 1.35;
   color: var(--mute);
@@ -174,7 +171,6 @@ a {
 /* Masthead CTA button row */
 .mast-actions {
   margin-top: 30px;
-  font-family: var(--font-mono), ui-monospace, monospace;
   font-size: 13px;
 }
 
@@ -312,7 +308,6 @@ a {
   padding: 9px 12px;
   border: 1px solid var(--rule-2);
   background: var(--ink-3);
-  font-family: var(--font-ibm-plex-mono), ui-monospace, monospace;
   font-size: 12px;
   line-height: 1.5;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);

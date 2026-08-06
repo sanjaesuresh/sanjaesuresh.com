@@ -20,10 +20,7 @@ export default function Masthead() {
       <div>
         <div
           className="preamble-block mb-9"
-          style={{
-            fontFamily: "var(--font-ibm-plex-mono)",
-            color: "var(--mute)",
-          }}
+          style={{ color: "var(--mute)" }}
         >
           <span className="pa-key pa-key--lg">name</span>
           <span className="pa-sep pa-key--lg">:</span>
@@ -70,10 +67,7 @@ export default function Masthead() {
           </span>
         </div>
 
-        <div
-          className="mast-actions flex flex-wrap gap-[14px] text-[13px]"
-          style={{ fontFamily: "var(--font-ibm-plex-mono)" }}
-        >
+        <div className="mast-actions flex flex-wrap gap-[14px] text-[13px]">
           <a
             href="/resume-sanjae-suresh.pdf"
             download
@@ -116,7 +110,6 @@ export default function Masthead() {
           <div
             className="headshot-placeholder flex h-full w-full items-center justify-center text-center text-[12px] leading-[1.7]"
             style={{
-              fontFamily: "var(--font-ibm-plex-mono)",
               color: "var(--dim)",
               outline: "1px dashed var(--accent-dim)",
               outlineOffset: "2px",

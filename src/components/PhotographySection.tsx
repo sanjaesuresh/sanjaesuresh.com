@@ -33,23 +33,18 @@ export default function PhotographySection() {
       className="border-b py-[56px]"
       style={{ borderColor: "var(--rule)" }}
     >
-      <SectionHead
-        index="05"
-        title="frames"
-        meta={`contact sheet · ${photos.length} frames`}
-      />
+      <SectionHead index="05" title="frames" />
 
       {photos.length === 0 ? (
         <div
           className="border p-8 text-[12px]"
           style={{
-            fontFamily: "var(--font-ibm-plex-mono)",
             color: "var(--dim)",
             borderColor: "var(--rule)",
             background: "var(--ink-2)",
           }}
         >
-          {"// no frames yet. drop photos into "}
+          {"no frames yet. drop photos into "}
           <span style={{ color: "var(--accent)" }}>content/photography/</span>
           {" and run "}
           <span style={{ color: "var(--accent)" }}>scripts/build-photos.py</span>
@@ -85,7 +80,6 @@ export default function PhotographySection() {
                   <div
                     className="flex justify-between gap-[10px] border-t px-[10px] py-2 text-[11px]"
                     style={{
-                      fontFamily: "var(--font-ibm-plex-mono)",
                       color: "var(--mute)",
                       borderColor: "var(--rule)",
                     }}
@@ -101,10 +95,7 @@ export default function PhotographySection() {
           </div>
 
           {pageCount > 1 && (
-            <div
-              className="mt-[22px] flex items-center justify-between text-[13px]"
-              style={{ fontFamily: "var(--font-ibm-plex-mono)" }}
-            >
+            <div className="mt-[22px] flex items-center justify-between text-[13px]">
               <span style={{ color: "var(--dim)" }}>
                 roll{" "}
                 <span style={{ color: "var(--accent)" }}>

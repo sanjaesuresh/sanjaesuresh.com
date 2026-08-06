@@ -20,15 +20,11 @@ export default function AtlasSection() {
       className="border-b py-[56px]"
       style={{ borderColor: "var(--rule)" }}
     >
-      <SectionHead
-        index="04"
-        title="atlas"
-        meta={`${trips.length} cities · ${countryCount} countries`}
-      />
+      <SectionHead index="04" title="atlas" />
 
       <p
         className="-mt-4 mb-7 text-[14px] leading-[1.6]"
-        style={{ fontFamily: "var(--font-space-grotesk)", color: "var(--mute)" }}
+        style={{ color: "var(--mute)" }}
       >
         A map of everywhere I&apos;ve traveled. Places I&apos;ve visited, lived
         in, or currently call home.
@@ -169,9 +165,9 @@ export default function AtlasSection() {
 
       <p
         className="mt-[14px] text-[12px]"
-        style={{ fontFamily: "var(--font-ibm-plex-mono)", color: "var(--dim)" }}
+        style={{ color: "var(--dim)" }}
       >
-        {"// hover or tap a marker · "}
+        {"hover or tap a marker · "}
         <span style={{ color: "var(--signal)" }}>◎</span> home base
         {"  ·  "}
         <span style={{ color: "var(--lived)" }}>●</span> lived
