@@ -23,7 +23,7 @@ export default function ExperienceSection() {
       className="border-b py-[56px]"
       style={{ borderColor: "var(--rule)" }}
     >
-      <SectionHead index="02" title="experience" />
+      <SectionHead title="experience" />
       <div>
         {experience.map((role) => (
           <div

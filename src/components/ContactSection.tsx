@@ -7,7 +7,7 @@ export default function ContactSection() {
       className="border-b py-[56px]"
       style={{ borderColor: "var(--rule)" }}
     >
-      <SectionHead index="06" title="contact" />
+      <SectionHead title="contact" />
 
       <div
         className="border p-[28px] text-[15px] leading-[2.1]"

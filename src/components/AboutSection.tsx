@@ -7,7 +7,7 @@ export default function AboutSection() {
       className="border-b py-[56px]"
       style={{ borderColor: "var(--rule)" }}
     >
-      <SectionHead index="01" title="about" />
+      <SectionHead title="about" />
       <div
         className="about-grid grid gap-[48px] items-start"
         style={{ gridTemplateColumns: "1fr 280px" }}

@@ -20,7 +20,7 @@ export default function AtlasSection() {
       className="border-b py-[56px]"
       style={{ borderColor: "var(--rule)" }}
     >
-      <SectionHead index="04" title="atlas" />
+      <SectionHead title="atlas" />
 
       <div
         className="relative border"

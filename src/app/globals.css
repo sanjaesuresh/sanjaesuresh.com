@@ -201,15 +201,6 @@ a {
   color: var(--ink);
 }
 
-/* Experience log row hover */
-.log-entry {
-  transition: background 0.15s;
-}
-
-.log-entry:hover {
-  background: var(--ink-2);
-}
-
 /* Project link hover */
 .proj-link {
   color: var(--accent);

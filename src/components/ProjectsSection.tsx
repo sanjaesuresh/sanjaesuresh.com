@@ -8,7 +8,7 @@ export default function ProjectsSection() {
       className="border-b py-[56px]"
       style={{ borderColor: "var(--rule)" }}
     >
-      <SectionHead index="03" title="projects" />
+      <SectionHead title="projects" />
 
       {/* newest first: source list is chronological, so reverse for display */}
       {[...projects].reverse().map((proj, i) => (

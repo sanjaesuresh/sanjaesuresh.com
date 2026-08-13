@@ -45,7 +45,7 @@ export default function PhotographySection() {
       className="border-b py-[56px]"
       style={{ borderColor: "var(--rule)" }}
     >
-      <SectionHead index="05" title="frames" />
+      <SectionHead title="frames" />
 
       {photos.length === 0 ? (
         <div
