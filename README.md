@@ -39,8 +39,10 @@ Section content is data-driven — edit these rather than the components:
 | `src/data/photos.ts` | Photo gallery manifest (generated — see below) |
 | `src/data/worldPaths.ts` | Atlas world-map SVG paths (generated — see below) |
 
-Drop-in assets live in `content/` (resume PDF, source photos) and are published
-to `public/` for the site to serve.
+Drop-in assets live in `content/` (source photos) and are published to
+`public/` for the site to serve. The resume has a single source:
+`public/resume-sanjae-suresh.pdf`, served directly — replace that file to
+update it.
 
 ## Content scripts
 
