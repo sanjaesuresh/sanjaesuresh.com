@@ -46,3 +46,9 @@ next-env.d.ts
 
 # raw photo originals (1GB+); the web-optimized copies live in /public/photography
 /content/photography/
+
+# sdd orchestration scratch (session bookkeeping, not site code)
+.superpowers/
+
+# python bytecode
+__pycache__/

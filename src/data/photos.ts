@@ -14,7 +14,7 @@ export const photos: Photo[] = [
   {
     filename: "photo-01.jpg",
     src: "/photography/photo-01.jpg",
-    alt: "Photograph by Sanjae Suresh",
+    alt: "Chairlift ascending a frosted, snow-covered mountain under grey fog.",
     exifId: "827",
     exifCaption: "26mm · ƒ1.8 · 1/666 · iso32",
     aspect: "landscape",
@@ -24,7 +24,7 @@ export const photos: Photo[] = [
   {
     filename: "photo-02.jpg",
     src: "/photography/photo-02.jpg",
-    alt: "Photograph by Sanjae Suresh",
+    alt: "Aerial view of a marina and runway along a city waterfront.",
     exifId: "036",
     exifCaption: "77mm · ƒ2.8 · 1/139 · iso32",
     aspect: "landscape",
@@ -34,7 +34,7 @@ export const photos: Photo[] = [
   {
     filename: "photo-03.jpg",
     src: "/photography/photo-03.jpg",
-    alt: "Photograph by Sanjae Suresh",
+    alt: "Lions Gate Bridge's green suspension towers against misty North Shore mountains.",
     exifId: "171",
     exifCaption: "100mm · ƒ2.8 · 1/158 · iso40",
     aspect: "landscape",
@@ -44,7 +44,7 @@ export const photos: Photo[] = [
   {
     filename: "photo-04.jpg",
     src: "/photography/photo-04.jpg",
-    alt: "Photograph by Sanjae Suresh",
+    alt: "Palm fronds framing white cabana umbrellas along a rocky tropical shoreline.",
     exifId: "233",
     exifCaption: "77mm · ƒ2.8 · 1/2273 · iso32",
     aspect: "landscape",
@@ -54,7 +54,7 @@ export const photos: Photo[] = [
   {
     filename: "photo-05.jpg",
     src: "/photography/photo-05.jpg",
-    alt: "Photograph by Sanjae Suresh",
+    alt: "Sunset light striking rows of windows on a high-rise office facade.",
     exifId: "637",
     exifCaption: "100mm · ƒ2.8 · 1/121 · iso50",
     aspect: "portrait",
@@ -64,7 +64,7 @@ export const photos: Photo[] = [
   {
     filename: "photo-06.jpg",
     src: "/photography/photo-06.jpg",
-    alt: "Photograph by Sanjae Suresh",
+    alt: "Rooftop satellite dishes with a cable-stayed stadium roof and skyline at dusk.",
     exifId: "643",
     exifCaption: "100mm · ƒ2.8 · 1/121 · iso200",
     aspect: "portrait",
@@ -74,7 +74,7 @@ export const photos: Photo[] = [
   {
     filename: "photo-07.jpg",
     src: "/photography/photo-07.jpg",
-    alt: "Photograph by Sanjae Suresh",
+    alt: "View across rooftops and water toward hazy hills from a downtown high-rise.",
     exifId: "003",
     exifCaption: "200mm · ƒ2.8 · 1/121 · iso80",
     aspect: "landscape",
@@ -84,7 +84,7 @@ export const photos: Photo[] = [
   {
     filename: "photo-08.jpg",
     src: "/photography/photo-08.jpg",
-    alt: "Photograph by Sanjae Suresh",
+    alt: "Aerial view of a grassy cliff coastline with rock stacks and crashing waves.",
     exifId: "154",
     exifCaption: "100mm · ƒ2.8 · 1/638 · iso50",
     aspect: "landscape",
@@ -94,7 +94,7 @@ export const photos: Photo[] = [
   {
     filename: "photo-09.jpg",
     src: "/photography/photo-09.jpg",
-    alt: "Photograph by Sanjae Suresh",
+    alt: "Dark volcanic rocks scattered on a beach, birds along the waterline, misty cliffs beyond.",
     exifId: "166",
     exifCaption: "100mm · ƒ2.8 · 1/638 · iso32",
     aspect: "landscape",
@@ -104,7 +104,7 @@ export const photos: Photo[] = [
   {
     filename: "photo-10.jpg",
     src: "/photography/photo-10.jpg",
-    alt: "Photograph by Sanjae Suresh",
+    alt: "Rows of windows on a brick tower catching golden light beside a glass high-rise.",
     exifId: "337",
     exifCaption: "100mm · ƒ2.8 · 1/121 · iso100",
     aspect: "landscape",
@@ -114,7 +114,7 @@ export const photos: Photo[] = [
   {
     filename: "photo-11.jpg",
     src: "/photography/photo-11.jpg",
-    alt: "Photograph by Sanjae Suresh",
+    alt: "The Bay Bridge's suspension tower rising over a palm-lined San Francisco street at dusk.",
     exifId: "386",
     exifCaption: "48mm · ƒ1.8 · 1/120 · iso80",
     aspect: "portrait",
@@ -124,7 +124,7 @@ export const photos: Photo[] = [
   {
     filename: "photo-12.jpg",
     src: "/photography/photo-12.jpg",
-    alt: "Photograph by Sanjae Suresh",
+    alt: "Wave foam surging around jagged sea stacks in close-up.",
     exifId: "420",
     exifCaption: "100mm · ƒ2.8 · 1/638 · iso32",
     aspect: "landscape",
@@ -134,7 +134,7 @@ export const photos: Photo[] = [
   {
     filename: "photo-13.jpg",
     src: "/photography/photo-13.jpg",
-    alt: "Photograph by Sanjae Suresh",
+    alt: "The sun setting low over rippled water, branches silhouetted at the shore.",
     exifId: "499",
     exifCaption: "100mm · ƒ2.8 · 1/397 · iso50",
     aspect: "landscape",
@@ -144,7 +144,7 @@ export const photos: Photo[] = [
   {
     filename: "photo-14.jpg",
     src: "/photography/photo-14.jpg",
-    alt: "Photograph by Sanjae Suresh",
+    alt: "An arched coastal bridge over cliffs at sunset, waves breaking on a cove below.",
     exifId: "506",
     exifCaption: "14mm · ƒ2.2 · 1/121 · iso32",
     aspect: "landscape",
@@ -154,7 +154,7 @@ export const photos: Photo[] = [
   {
     filename: "photo-15.jpg",
     src: "/photography/photo-15.jpg",
-    alt: "Photograph by Sanjae Suresh",
+    alt: "Grassy coastal bluff at sunset, a sea stack offshore, streaked orange clouds.",
     exifId: "528",
     exifCaption: "24mm · ƒ1.8 · 1/121 · iso64",
     aspect: "landscape",
@@ -164,7 +164,7 @@ export const photos: Photo[] = [
   {
     filename: "photo-16.jpg",
     src: "/photography/photo-16.jpg",
-    alt: "Photograph by Sanjae Suresh",
+    alt: "Half Dome's granite face rising above the treeline against a clear sky.",
     exifId: "610",
     exifCaption: "100mm · ƒ2.8 · 1/638 · iso32",
     aspect: "landscape",
@@ -174,7 +174,7 @@ export const photos: Photo[] = [
   {
     filename: "photo-17.jpg",
     src: "/photography/photo-17.jpg",
-    alt: "Photograph by Sanjae Suresh",
+    alt: "Pedestrians crossing the Golden Gate Bridge with the city skyline behind.",
     exifId: "830",
     exifCaption: "100mm · ƒ2.8 · 1/638 · iso32",
     aspect: "landscape",
@@ -184,7 +184,7 @@ export const photos: Photo[] = [
   {
     filename: "photo-18.jpg",
     src: "/photography/photo-18.jpg",
-    alt: "Photograph by Sanjae Suresh",
+    alt: "A Victorian house's bay window in front of Salesforce Tower glowing at sunset.",
     exifId: "867",
     exifCaption: "100mm · ƒ2.8 · 1/121 · iso200",
     aspect: "portrait",
@@ -194,7 +194,7 @@ export const photos: Photo[] = [
   {
     filename: "photo-19.jpg",
     src: "/photography/photo-19.jpg",
-    alt: "Photograph by Sanjae Suresh",
+    alt: "Pink-tinged cumulus clouds scattered across a dusk sky.",
     exifId: "972",
     exifCaption: "100mm · ƒ2.8 · 1/145 · iso40",
     aspect: "landscape",
@@ -204,7 +204,7 @@ export const photos: Photo[] = [
   {
     filename: "photo-20.jpg",
     src: "/photography/photo-20.jpg",
-    alt: "Photograph by Sanjae Suresh",
+    alt: "Beachgoers and gulls on a wide sand beach at sunset, palm-lined houses beyond.",
     exifId: "111",
     exifCaption: "100mm · ƒ2.8 · 1/428 · iso50",
     aspect: "landscape",
@@ -214,7 +214,7 @@ export const photos: Photo[] = [
   {
     filename: "photo-21.jpg",
     src: "/photography/photo-21.jpg",
-    alt: "Photograph by Sanjae Suresh",
+    alt: "Tall palm trees lining a sandy beach path, people strolling below.",
     exifId: "117",
     exifCaption: "100mm · ƒ2.8 · 1/495 · iso50",
     aspect: "landscape",
@@ -224,7 +224,7 @@ export const photos: Photo[] = [
   {
     filename: "photo-22.jpg",
     src: "/photography/photo-22.jpg",
-    alt: "Photograph by Sanjae Suresh",
+    alt: "One World Trade Center rising above a busy Manhattan avenue under flat grey cloud.",
     exifId: "384",
     exifCaption: "100mm · ƒ2.8 · 1/535 · iso50",
     aspect: "portrait",
@@ -234,7 +234,7 @@ export const photos: Photo[] = [
   {
     filename: "photo-23.jpg",
     src: "/photography/photo-23.jpg",
-    alt: "Photograph by Sanjae Suresh",
+    alt: "A Chinatown street lined with flags, signage, and fire escapes in late-day light.",
     exifId: "410",
     exifCaption: "100mm · ƒ2.8 · 1/216 · iso80",
     aspect: "portrait",
@@ -244,7 +244,7 @@ export const photos: Photo[] = [
   {
     filename: "photo-24.jpg",
     src: "/photography/photo-24.jpg",
-    alt: "Photograph by Sanjae Suresh",
+    alt: "Times Square billboards glowing through rain and mist, crowds with umbrellas below.",
     exifId: "538",
     exifCaption: "100mm · ƒ2.8 · 1/120 · iso125",
     aspect: "portrait",
@@ -254,7 +254,7 @@ export const photos: Photo[] = [
   {
     filename: "photo-25.jpg",
     src: "/photography/photo-25.jpg",
-    alt: "Photograph by Sanjae Suresh",
+    alt: "Two palm trees framing the San Francisco skyline from a park lawn.",
     exifId: "742",
     exifCaption: "100mm · ƒ2.8 · 1/638 · iso20",
     aspect: "portrait",
@@ -264,7 +264,7 @@ export const photos: Photo[] = [
   {
     filename: "photo-26.jpg",
     src: "/photography/photo-26.jpg",
-    alt: "Photograph by Sanjae Suresh",
+    alt: "The CN Tower rising above the Toronto skyline across a park at dusk.",
     exifId: "805",
     exifCaption: "100mm · ƒ2.8 · 1/133 · iso40",
     aspect: "portrait",
@@ -274,7 +274,7 @@ export const photos: Photo[] = [
   {
     filename: "photo-27.jpg",
     src: "/photography/photo-27.jpg",
-    alt: "Photograph by Sanjae Suresh",
+    alt: "Palm trees crowning a colonial-style rooftop terrace under a pink evening sky.",
     exifId: "983",
     exifCaption: "100mm · ƒ2.8 · 1/638 · iso25",
     aspect: "portrait",
@@ -284,7 +284,7 @@ export const photos: Photo[] = [
   {
     filename: "photo-28.jpg",
     src: "/photography/photo-28.jpg",
-    alt: "Photograph by Sanjae Suresh",
+    alt: "A vintage navy car parked beneath green awnings and palm trees on a sidewalk.",
     exifId: "989",
     exifCaption: "100mm · ƒ2.8 · 1/121 · iso250",
     aspect: "portrait",
@@ -294,7 +294,7 @@ export const photos: Photo[] = [
   {
     filename: "photo-29.jpg",
     src: "/photography/photo-29.jpg",
-    alt: "Photograph by Sanjae Suresh",
+    alt: "Strings of red star-flags over parked scooters on a tree-lined street.",
     exifId: "999",
     exifCaption: "100mm · ƒ2.8 · 1/121 · iso320",
     aspect: "portrait",
@@ -304,7 +304,7 @@ export const photos: Photo[] = [
   {
     filename: "photo-30.jpg",
     src: "/photography/photo-30.jpg",
-    alt: "Photograph by Sanjae Suresh",
+    alt: "Palm trees silhouetted against a vivid pink and orange sunset over the ocean.",
     exifId: "203",
     exifCaption: "100mm · ƒ2.8 · 1/33 · iso640",
     aspect: "portrait",
@@ -314,7 +314,7 @@ export const photos: Photo[] = [
   {
     filename: "photo-31.jpg",
     src: "/photography/photo-31.jpg",
-    alt: "Photograph by Sanjae Suresh",
+    alt: "Surfers in the lineup as the sky burns orange over a mountain-backed coastline.",
     exifId: "215",
     exifCaption: "24mm · ƒ1.8 · 1/83 · iso200",
     aspect: "portrait",
@@ -324,7 +324,7 @@ export const photos: Photo[] = [
   {
     filename: "photo-32.jpg",
     src: "/photography/photo-32.jpg",
-    alt: "Photograph by Sanjae Suresh",
+    alt: "A tall white bodhisattva statue standing against a clear blue sky.",
     exifId: "336",
     exifCaption: "28mm · ƒ1.8 · 1/60 · iso100",
     aspect: "landscape",
@@ -334,7 +334,7 @@ export const photos: Photo[] = [
   {
     filename: "photo-33.jpg",
     src: "/photography/photo-33.jpg",
-    alt: "Photograph by Sanjae Suresh",
+    alt: "A white bodhisattva statue lit gold at dusk, framed by branches and red ribbons.",
     exifId: "353",
     exifCaption: "24mm · ƒ1.8 · 1/50 · iso125",
     aspect: "portrait",
@@ -344,7 +344,7 @@ export const photos: Photo[] = [
   {
     filename: "photo-34.jpg",
     src: "/photography/photo-34.jpg",
-    alt: "Photograph by Sanjae Suresh",
+    alt: "The Golden Bridge's giant stone hands cradling a walkway above cloud-covered hills.",
     exifId: "688",
     exifCaption: "24mm · ƒ1.8 · 1/6897 · iso64",
     aspect: "landscape",
@@ -354,7 +354,7 @@ export const photos: Photo[] = [
   {
     filename: "photo-35.jpg",
     src: "/photography/photo-35.jpg",
-    alt: "Photograph by Sanjae Suresh",
+    alt: "Close-up of the Golden Bridge's mossy stone fingers against clouds and forested hills.",
     exifId: "925",
     exifCaption: "24mm · ƒ1.8 · 1/4545 · iso100",
     aspect: "portrait",
@@ -364,7 +364,7 @@ export const photos: Photo[] = [
   {
     filename: "photo-36.jpg",
     src: "/photography/photo-36.jpg",
-    alt: "Photograph by Sanjae Suresh",
+    alt: "A rooftop bar crowd bathed in green light overlooking a city skyline at night.",
     exifId: "788",
     exifCaption: "24mm · ƒ1.8 · 1/19 · iso640",
     aspect: "landscape",
@@ -374,7 +374,7 @@ export const photos: Photo[] = [
   {
     filename: "photo-37.jpg",
     src: "/photography/photo-37.jpg",
-    alt: "Photograph by Sanjae Suresh",
+    alt: "A winding dirt ridge trail through green mountains descending toward the coast.",
     exifId: "296",
     exifCaption: "100mm · ƒ2.8 · 1/184 · iso40",
     aspect: "portrait",
@@ -384,7 +384,7 @@ export const photos: Photo[] = [
   {
     filename: "photo-38.jpg",
     src: "/photography/photo-38.jpg",
-    alt: "Photograph by Sanjae Suresh",
+    alt: "A rocky trail leading down to a wide bay coastline beneath cloud-draped mountains.",
     exifId: "311",
     exifCaption: "100mm · ƒ2.8 · 1/593 · iso50",
     aspect: "portrait",
@@ -394,7 +394,7 @@ export const photos: Photo[] = [
   {
     filename: "photo-39.jpg",
     src: "/photography/photo-39.jpg",
-    alt: "Photograph by Sanjae Suresh",
+    alt: "A rugged volcanic rock coastline meeting turquoise water under a partly cloudy sky.",
     exifId: "461",
     exifCaption: "100mm · ƒ2.8 · 1/679 · iso20",
     aspect: "landscape",
@@ -404,7 +404,7 @@ export const photos: Photo[] = [
   {
     filename: "photo-40.jpg",
     src: "/photography/photo-40.jpg",
-    alt: "Photograph by Sanjae Suresh",
+    alt: "Coconut palms swaying against a clear blue sky.",
     exifId: "624",
     exifCaption: "100mm · ƒ2.8 · 1/638 · iso25",
     aspect: "portrait",
@@ -414,7 +414,7 @@ export const photos: Photo[] = [
   {
     filename: "photo-41.jpg",
     src: "/photography/photo-41.jpg",
-    alt: "Photograph by Sanjae Suresh",
+    alt: "A white Jeep on a misty jungle road beneath a rockslide safety net.",
     exifId: "912",
     exifCaption: "100mm · ƒ2.8 · 1/408 · iso50",
     aspect: "portrait",
@@ -424,7 +424,7 @@ export const photos: Photo[] = [
   {
     filename: "photo-42.jpg",
     src: "/photography/photo-42.jpg",
-    alt: "Photograph by Sanjae Suresh",
+    alt: "Street go-karts stopped at a Shibuya intersection lit by neon signage at night.",
     exifId: "683",
     exifCaption: "24mm · ƒ1.8 · 1/97 · iso200",
     aspect: "landscape",
@@ -434,7 +434,7 @@ export const photos: Photo[] = [
   {
     filename: "photo-43.jpg",
     src: "/photography/photo-43.jpg",
-    alt: "Photograph by Sanjae Suresh",
+    alt: "A Japanese street corner with round lamp posts and tangled overhead wires.",
     exifId: "028",
     exifCaption: "24mm · ƒ1.8 · 1/159 · iso64",
     aspect: "landscape",

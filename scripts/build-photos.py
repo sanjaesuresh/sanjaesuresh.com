@@ -8,7 +8,7 @@ aspect, and regenerate src/data/photos.ts.
 
 Uses only macOS built-ins (sips, mdls) -- no extra deps.
 """
-import os, re, subprocess, sys
+import json, os, re, subprocess, sys
 from PIL import Image, ExifTags
 
 HERE = os.path.dirname(os.path.abspath(__file__))
@@ -51,6 +51,21 @@ def caption(jpg_path):
         except (ValueError, TypeError): pass
     return " · ".join(parts)
 
+def existing_alts():
+    """preserve hand-written alt text across regenerations: alts get edited by hand after
+    generation, so rerunning this script must not silently overwrite them with the generic default."""
+    if not os.path.exists(MANIFEST):
+        return {}
+    with open(MANIFEST) as fh:
+        text = fh.read()
+    alts = {}
+    for block in re.findall(r"\{([^{}]*)\},", text):
+        fn = re.search(r'filename:\s*"([^"]*)"', block)
+        alt = re.search(r'alt:\s*"([^"]*)"', block)
+        if fn and alt:
+            alts[fn.group(1)] = alt.group(1)
+    return alts
+
 def dims(path):
     out = sh(["sips", "-g", "pixelWidth", "-g", "pixelHeight", path])
     w = h = 0
@@ -64,6 +79,8 @@ def main():
         sys.exit(f"no source dir: {SRC}")
     os.makedirs(OUT, exist_ok=True)
     files = sorted(f for f in os.listdir(SRC) if f.lower().endswith(EXTS))
+    prior_alts = existing_alts()
+    default_alt = "Photograph by Sanjae Suresh"
     entries = []
     for i, fn in enumerate(files, 1):
         src_path = os.path.join(SRC, fn)
@@ -80,8 +97,13 @@ def main():
         cap = caption(out_path)
         num = re.search(r"(\d{3,})", fn)
         exif_id = (num.group(1)[-3:] if num else f"{i:03d}")
+        # keep a hand-written alt if one exists for this filename; only fall back to
+        # the generic default when there's no prior entry or it was still generic
+        alt = prior_alts.get(out_name)
+        if not alt or alt == default_alt:
+            alt = default_alt
         entries.append({"filename": out_name, "src": f"/photography/{out_name}",
-                        "alt": "Photograph by Sanjae Suresh", "exifId": exif_id,
+                        "alt": alt, "exifId": exif_id,
                         "exifCaption": cap, "aspect": aspect,
                         "width": w, "height": h})
         print(f"  {fn:48s} -> {out_name}  {w}x{h} {aspect}  [{cap}]")
@@ -97,7 +119,11 @@ def main():
         lines.append("  {")
         for k in ("filename", "src", "alt", "exifId", "exifCaption", "aspect",
                   "width", "height"):
-            lines.append(f'    {k}: {e[k]!r},'.replace("'", '"'))
+            v = e[k]
+            # json.dumps (not repr+replace) so apostrophes in alt text survive and
+            # non-ASCII exifCaption chars (ƒ, ·) aren't turned into \u escapes
+            val = json.dumps(v, ensure_ascii=False) if isinstance(v, str) else v
+            lines.append(f'    {k}: {val},')
         lines.append("  },")
     lines.append("];")
     with open(MANIFEST, "w") as fh:

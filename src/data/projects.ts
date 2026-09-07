@@ -69,7 +69,7 @@ export const projects: Project[] = [
     status: "shipped",
     statusClass: "shipped",
     description:
-      "A directory of proven, role-based AI setups. Pick a template, customize it with plain-language forms, test-drive it against real scenarios, then export a config you paste into your own Claude or ChatGPT. A deterministic compiler turns your answers into the finished setup; curated, AI-generated, and community submissions share one schema and pass a review-before-publish gate.",
+      "A directory of proven, role-based AI setups. Pick a template, tune it with plain-language forms, test-drive it against real scenarios, then export a config for your own Claude or ChatGPT.",
     deps: "next.js · typescript · react · supabase · anthropic api",
     links: [
       { label: "website ↗", href: "https://armoryhq.dev" },
@@ -99,7 +99,7 @@ export const projects: Project[] = [
     status: "active",
     statusClass: "active",
     description:
-      "A context compiler for AI coding agents — LLVM, but for context windows. It sits between the agent and the model, converts repository state, history, and tool output into a compact intermediate representation, and emits an optimized prompt for each target model: smaller, cheaper, sharper. First shipped piece is a recording proxy that measures where an agent's tokens actually go.",
+      "A context compiler for AI coding agents: LLVM, but for context windows. It sits between the agent and the model, converts repository state, history, and tool output into a compact intermediate representation, and emits a leaner prompt tuned to each target model. First shipped piece is a recording proxy that measures where an agent's tokens actually go.",
     deps: "typescript · node · anthropic api",
     links: [
       { label: "github ↗", href: "https://github.com/sanjaesuresh/bouncer" },

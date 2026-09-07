@@ -1,10 +1,20 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Space_Grotesk, IBM_Plex_Mono } from "next/font/google";
 import "./globals.css";
 
-const inter = Inter({
+// human voice: variable font, weight axis 300-700 (no `weight` array, so the
+// full axis loads instead of pinning to a static cut).
+const spaceGrotesk = Space_Grotesk({
   subsets: ["latin"],
-  variable: "--font-inter",
+  variable: "--font-grotesk",
+  display: "swap",
+});
+
+// machine voice: labels, metadata, nav, config. static weights only.
+const ibmPlexMono = IBM_Plex_Mono({
+  subsets: ["latin"],
+  weight: ["400", "500", "600"],
+  variable: "--font-plex-mono",
   display: "swap",
 });
 
@@ -25,7 +35,7 @@ export const metadata: Metadata = {
         url: "/og.png",
         width: 1200,
         height: 630,
-        alt: "Sanjae Suresh — software engineer",
+        alt: "Sanjae Suresh · software engineer",
       },
     ],
   },
@@ -53,7 +63,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={inter.variable}
+      className={`${spaceGrotesk.variable} ${ibmPlexMono.variable}`}
     >
       <body className="min-h-full antialiased">{children}</body>
     </html>

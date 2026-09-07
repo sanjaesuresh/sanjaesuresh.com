@@ -3,81 +3,49 @@ import SectionHead from "./SectionHead";
 
 export default function ProjectsSection() {
   return (
-    <section
-      id="projects"
-      className="border-b py-[56px]"
-      style={{ borderColor: "var(--rule)" }}
-    >
-      <SectionHead title="projects" />
+    <section id="projects" className="border-b border-rule py-[56px]">
+      <SectionHead title="projects" meta={`${projects.length} entries`} />
 
       {/* newest first: source list is chronological, so reverse for display */}
       {[...projects].reverse().map((proj, i) => (
         <div
           key={proj.id}
-          className="grid border-t py-[26px]"
-          style={{
-            gridTemplateColumns: "54px 1fr",
-            borderColor: "var(--rule)",
-          }}
+          className="grid grid-cols-[54px_1fr] border-t border-rule py-[26px]"
         >
-          <div
-            className="pt-[6px] text-[12px]"
-            style={{ color: "var(--accent)" }}
-          >
+          <div className="font-mono pt-[6px] text-[12px] text-accent">
             {String(i + 1).padStart(2, "0")}
           </div>
           <div>
-            <h3
-              className="flex flex-wrap items-center gap-3 font-semibold"
-              style={{
-                fontSize: "25px",
-                color: "var(--paper)",
-              }}
-            >
+            <h3 className="flex flex-wrap items-center gap-3 font-semibold text-[25px] text-paper">
               {proj.name}
               <span
-                className="border px-[7px] py-[2px] text-[12px]"
-                style={{
-                  color: "var(--mute)",
-                  borderColor: "var(--rule-2)",
-                  fontWeight: 400,
-                }}
+                className="font-mono border border-rule-2 px-[7px] py-[2px] text-[12px] text-mute"
+                style={{ fontWeight: 400 }}
               >
                 {proj.version}
               </span>
               <span
-                className="text-[11px] uppercase tracking-[.08em]"
-                style={{
-                  color:
-                    proj.statusClass === "shipped"
-                      ? "var(--accent)"
-                      : "var(--signal)",
-                  fontWeight: 400,
-                }}
+                className={`font-mono text-[11px] uppercase tracking-[.08em] ${
+                  proj.statusClass === "shipped" ? "text-accent" : "text-signal"
+                }`}
+                style={{ fontWeight: 400 }}
               >
                 {proj.status}
               </span>
             </h3>
 
             <p
-              className="my-3 text-[16px]"
-              style={{
-                color: "var(--paper)",
-                opacity: 0.9,
-                maxWidth: "64ch",
-              }}
+              className="my-3 text-[16px] text-paper max-w-[64ch]"
+              style={{ opacity: 0.9 }}
             >
               {proj.description}
             </p>
 
-            <div
-              className="mb-[14px] text-[12.5px]"
-              style={{ color: "var(--mute)" }}
-            >
-              <span style={{ color: "var(--dim)" }}>built with</span> {proj.deps}
+            <div className="font-mono mb-[14px] text-[13px] text-mute">
+              <span className="text-dim">built with</span> {proj.deps}
             </div>
 
-            <div className="flex gap-5 text-[13px]">
+            <div className="font-mono flex gap-5 text-[13px]">
               {proj.links.map((link) => (
                 <a
                   key={link.href}

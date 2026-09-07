@@ -4,18 +4,18 @@ export interface Trip {
   id: string;
   /** Primary place label shown in the tooltip head (city, region, or country). */
   city: string;
-  /** Country — only rendered when it differs from `city`. */
+  /** Country, only rendered when it differs from `city`. */
   country: string;
   /** Decimal degrees. East/North positive (e.g. Toronto: lon -79.38, lat 43.65). */
   lon: number;
   lat: number;
-  /** Year, range, or status — e.g. "2024", "2024 & 2025". Optional. */
+  /** Year, range, or status - e.g. "2024", "2024 & 2025". Optional. */
   when?: string;
   /** Optional one-line note shown under the place. */
   note?: string;
-  /** A place I've lived — rendered in light orange instead of cyan. */
+  /** A place I've lived, rendered in light orange instead of cyan. */
   lived?: boolean;
-  /** Marks the home base — pulsing ring instead of a plain dot. */
+  /** Marks the home base, pulsing ring instead of a plain dot. */
   home?: boolean;
 }
 
@@ -72,5 +72,5 @@ export function toPercent(lon: number, lat: number): { left: number; top: number
   };
 }
 
-/** Distinct countries visited — for the section meta line. */
+/** Distinct countries visited, for the section meta line. */
 export const countryCount = new Set(trips.map((t) => t.country)).size;

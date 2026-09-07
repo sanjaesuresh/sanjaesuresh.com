@@ -34,8 +34,8 @@ export const experience: Role[] = [
     org: "Rippling",
     location: "San Francisco, CA",
     bullets: [
-      "built Fast Transitions, a Python engine for low-latency profile mutations applying effective-dated state across HR / payroll / IT systems for 20,000+ companies",
-      "designed transaction-safe, versioned update logic for stackable concurrent edits that cut state-inconsistency bugs 35%; refactored REST APIs for -22% mutation latency",
+      "built Fast Transitions, the engine that applies effective-dated profile changes across HR, payroll, and IT for 20,000+ companies",
+      "made concurrent edits safe to stack: versioned, transaction-safe update logic that ended a whole class of state bugs",
     ],
     stack: "Python · REST · distributed systems",
   },
@@ -49,8 +49,8 @@ export const experience: Role[] = [
     org: "Activision Blizzard",
     location: "Vancouver, BC",
     bullets: [
-      "built on the Call of Duty commerce platform (purchases, bundles, trade-ins): 100M+ players, billions in annual revenue",
-      "optimized DB access, caching & load distribution (SQLAlchemy · Redis · Kafka): +25% throughput, -15% latency, -20% failed orders",
+      "worked on the Call of Duty commerce platform: purchases, bundles, and trade-ins for 100M+ players",
+      "sped up the order path with smarter caching and load distribution across PostgreSQL, Redis, and Kafka",
     ],
     stack: "Python · PostgreSQL · Redis · Kafka",
   },
@@ -64,8 +64,8 @@ export const experience: Role[] = [
     org: "Nokia",
     location: "Ottawa, ON · remote",
     bullets: [
-      "built the DLM, a Flask + PostgreSQL tool letting non-technical staff manage SQL Server records securely, cutting support tickets 80%",
-      "built Python / SQL pipelines moving telemetry across systems: +30% reporting speed for analytics teams",
+      "built the DLM, a Flask + PostgreSQL tool that lets non-technical staff manage SQL Server records safely; support tickets dropped by about 80%",
+      "wrote the Python pipelines that move telemetry between systems for the analytics teams",
     ],
     stack: "Flask · PostgreSQL · Python · SQL",
   },
@@ -79,8 +79,8 @@ export const experience: Role[] = [
     org: "Civiconnect",
     location: "Toronto, ON",
     bullets: [
-      "built full-stack features for a real estate marketplace (React · Node · Supabase) with real-time listing updates + secure buyer/agent auth",
-      "optimized REST APIs with async I/O & caching for +15% concurrency and faster property search & listing data",
+      "built full-stack features for a real estate marketplace: live listing updates and secure buyer and agent auth",
+      "made property search faster with async I/O and caching",
     ],
     stack: "React · Node · Supabase",
   },

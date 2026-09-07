@@ -14,6 +14,7 @@
   --accent-dim: #3E7E9C;
   --signal: #C98A5E;
   --lived: #E6B17E;
+  --mute-2: #AEB9C4;
 }
 
 @theme inline {
@@ -24,11 +25,14 @@
   --color-rule-2: var(--rule-2);
   --color-paper: var(--paper);
   --color-mute: var(--mute);
+  --color-mute-2: var(--mute-2);
   --color-dim: var(--dim);
   --color-accent: var(--accent);
   --color-accent-dim: var(--accent-dim);
   --color-signal: var(--signal);
-  --font-sans: var(--font-inter);
+  --color-lived: var(--lived);
+  --font-sans: var(--font-grotesk);
+  --font-mono: var(--font-plex-mono);
 }
 
 /* Reset lives in @layer base so Tailwind's utility layer (mx-auto, mb-*, px-*, py-*)
@@ -45,10 +49,17 @@ html {
   scroll-behavior: smooth;
 }
 
+/* Offset anchor scroll targets so section headers clear the sticky top bar
+   instead of landing underneath it. Overridden below for the taller mobile
+   two-row bar. */
+section[id] {
+  scroll-margin-top: 60px;
+}
+
 body {
   background: var(--ink);
   color: var(--paper);
-  font-family: var(--font-inter), system-ui, sans-serif;
+  font-family: var(--font-grotesk), system-ui, sans-serif;
   font-size: 16px;
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
@@ -62,6 +73,28 @@ body {
 a {
   color: inherit;
   text-decoration: none;
+}
+
+/* Shared page-width container: replaces the mx-auto px-7 + inline
+   1080px max-width pair used in page.tsx and TopBar. */
+.container-page {
+  max-width: 1080px;
+  margin-inline: auto;
+  padding-inline: 1.75rem;
+}
+
+/* Sticky nav's translucent glass background, pulled out of an inline
+   style object so the header only needs one class name. */
+.topbar {
+  background: color-mix(in srgb, var(--ink) 86%, transparent);
+  backdrop-filter: blur(6px);
+  border-bottom: 1px solid var(--rule);
+}
+
+/* Was an inline style; pulled into a class so the 760px block below can
+   override it to `auto` when the nav strip becomes a second row. */
+.topbar-inner {
+  height: 54px;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -129,7 +162,7 @@ a {
 .mast-grid {
   display: grid;
   grid-template-columns: 1fr 270px;
-  gap: 46px;
+  gap: 48px;
   align-items: center;
   padding: 72px 0 56px;
 }
@@ -138,22 +171,17 @@ a {
   aspect-ratio: 4/5;
 }
 
-/* Headshot placeholder (shown when headshot.jpg is absent) */
-.headshot-placeholder {
-  font-size: 12px;
-  color: var(--dim);
-  line-height: 1.7;
-}
-
 /* Preamble: key/colon/value grid above the CTA buttons. A grid (vs.
    space-padded text) keeps the colons in one column and lets long values wrap
    instead of forcing one wide line. */
+/* this rule sets font-family unlayered, so any font/size utility class on the same element (e.g. text-[13px]) is inert; same applies to .mast-actions and .atlas-tip below */
 .preamble-block {
   display: grid;
   grid-template-columns: max-content max-content 1fr;
   align-items: baseline;
   column-gap: 0;
   row-gap: 10px;
+  font-family: var(--font-plex-mono), ui-monospace, monospace;
   font-size: 15px;
   line-height: 1.35;
   color: var(--mute);
@@ -172,6 +200,7 @@ a {
 /* Masthead CTA button row */
 .mast-actions {
   margin-top: 30px;
+  font-family: var(--font-plex-mono), ui-monospace, monospace;
   font-size: 13px;
 }
 
@@ -180,12 +209,25 @@ a {
   padding: 10px 18px;
   border: 1px solid var(--rule-2);
   color: var(--paper);
+  cursor: pointer;
   transition: border-color 0.15s, color 0.15s;
 }
 
 .file-btn:hover {
   border-color: var(--accent);
   color: var(--accent);
+}
+
+/* Disabled pagination state: was inline-styled per button; centralized here
+   so the hover rule below can also neutralize the hover affordance. */
+.file-btn:disabled {
+  opacity: 0.35;
+  cursor: default;
+}
+
+.file-btn:disabled:hover {
+  border-color: var(--rule-2);
+  color: var(--paper);
 }
 
 .file-btn-solid {
@@ -230,6 +272,10 @@ a {
   transition: filter 0.3s;
 }
 
+.photo-frame {
+  cursor: pointer;
+}
+
 .photo-frame:hover .frame-img {
   filter: saturate(1.05) contrast(1.02);
 }
@@ -246,6 +292,19 @@ a {
   background: var(--ink);
   cursor: pointer;
   transition: transform 0.15s, background 0.15s, box-shadow 0.15s;
+}
+
+/* Touch-only hit-area pad: desktop pins sit as little as 1-20px apart at map
+   scale, so a blanket 44px hit box makes overlapping pins unreachable (e.g.
+   Toronto vs New York, Osaka vs Kyoto). Coarse pointers (touch) get a smaller
+   pad instead; fine pointers (mouse/trackpad) get none, matching pre-task
+   behavior. Dense clusters can still overlap on touch - accepted data density. */
+@media (pointer: coarse) {
+  .atlas-pin::before {
+    content: "";
+    position: absolute;
+    inset: -12px;
+  }
 }
 
 .atlas-pin:hover,
@@ -300,6 +359,7 @@ a {
   padding: 9px 12px;
   border: 1px solid var(--rule-2);
   background: var(--ink-3);
+  font-family: var(--font-plex-mono), ui-monospace, monospace;
   font-size: 12px;
   line-height: 1.5;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
@@ -330,15 +390,11 @@ a {
   font-size: 20px;
 }
 .about-body {
-  font-size: 17.5px;
+  font-size: 18px;
 }
 
 .log-entry {
   grid-template-columns: 150px 1fr;
-}
-
-.sheet-grid {
-  grid-template-columns: repeat(3, 1fr);
 }
 
 /* Photo grid: each image at its original aspect ratio, packed into columns. */
@@ -365,7 +421,7 @@ a {
   /* The grid wraps long values, so the preamble can stay a comfortable reading
      size on phones (no more shrinking it to fit one line). */
   .preamble-block {
-    font-size: 13.6px;
+    font-size: 14px;
   }
 
   /* Smaller CTA buttons on mobile: ~30% less padding, label ~15% smaller. */
@@ -388,31 +444,61 @@ a {
   }
 
   .about-grid {
-    grid-template-columns: 1fr !important;
+    grid-template-columns: 1fr;
   }
 
   /* About copy sizing on phones. */
   .about-lead {
-    font-size: 17.6px;
+    font-size: 18px;
   }
   .about-body {
-    font-size: 14.54px;
+    font-size: 15px;
   }
 
   .log-entry {
-    grid-template-columns: 1fr !important;
-    gap: 6px !important;
+    grid-template-columns: 1fr;
+    gap: 6px;
+  }
+
+  /* Mobile top bar is a taller two-row strip (~78px); bump the offset so
+     anchor taps don't land content under it. */
+  section[id] {
+    scroll-margin-top: 76px;
+  }
+
+  /* Recompose the top bar into two rows instead of deleting nav/status:
+     row 1 keeps path + status chip (their default order:0 keeps them
+     first, tie-broken by DOM order); row 2 is the nav pushed onto its
+     own line and turned into a horizontally scrollable strip. */
+  .topbar-inner {
+    height: auto;
+    flex-wrap: wrap;
+    row-gap: 4px;
+    padding-block: 10px 6px;
   }
 
   .nav-links {
-    display: none;
+    order: 3;
+    flex: 1 1 100%;
+    overflow-x: auto;
+    padding-block: 8px;
+    /* full-bleed: cancel container-page's inline padding so the strip
+       reaches the viewport edges, then reapply it as padding so the
+       first/last link still lines up with the rest of the page. */
+    margin-inline: -1.75rem;
+    padding-inline: 1.75rem;
+    scrollbar-width: none;
   }
 
-  .status-chip {
+  .nav-links::-webkit-scrollbar {
     display: none;
   }
+}
 
-  .sheet-grid {
-    grid-template-columns: repeat(2, 1fr) !important;
+/* Below 440px row 1 gets tight (only ~11px slack before the status chip
+   collides); drop the "· portfolio" suffix and keep just the name. */
+@media (max-width: 440px) {
+  .topbar-suffix {
+    display: none;
   }
 }

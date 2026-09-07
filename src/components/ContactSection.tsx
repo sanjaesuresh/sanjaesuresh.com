@@ -2,21 +2,10 @@ import SectionHead from "./SectionHead";
 
 export default function ContactSection() {
   return (
-    <section
-      id="contact"
-      className="border-b py-[56px]"
-      style={{ borderColor: "var(--rule)" }}
-    >
+    <section id="contact" className="border-b border-rule py-[56px]">
       <SectionHead title="contact" />
 
-      <div
-        className="border p-[28px] text-[15px] leading-[2.1]"
-        style={{
-          borderColor: "var(--rule)",
-          background: "var(--ink-2)",
-          maxWidth: "540px",
-        }}
-      >
+      <div className="font-mono border border-rule bg-ink-2 p-[28px] text-[15px] leading-[2.1] max-w-[540px]">
         {[
           {
             k: "email",
@@ -44,7 +33,7 @@ export default function ContactSection() {
           },
         ].map(({ k, label, href, download }) => (
           <div key={k} className="flex gap-4">
-            <span style={{ color: "var(--dim)", minWidth: "96px" }}>{k}</span>
+            <span className="text-dim min-w-[96px]">{k}</span>
             <a
               href={href}
               download={download || undefined}

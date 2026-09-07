@@ -2,49 +2,30 @@ import SectionHead from "./SectionHead";
 
 export default function AboutSection() {
   return (
-    <section
-      id="about"
-      className="border-b py-[56px]"
-      style={{ borderColor: "var(--rule)" }}
-    >
+    <section id="about" className="border-b border-rule py-[56px]">
       <SectionHead title="about" />
-      <div
-        className="about-grid grid gap-[48px] items-start"
-        style={{ gridTemplateColumns: "1fr 280px" }}
-      >
+      <div className="about-grid grid gap-[48px] items-start">
         <div>
-          <p
-            className="about-lead mb-4"
-            style={{ color: "var(--paper)" }}
-          >
+          <p className="about-lead mb-4 text-paper">
             Hey, I&apos;m Sanjae. I&apos;m a software engineer at Bloomberg, and
             I build backend systems for a living. Outside of work, I love
             travelling, learning new skills and just pushing past my comfort
             zone.
           </p>
-          <p
-            className="about-body mb-4"
-            style={{ color: "#AEB9C4" }}
-          >
+          <p className="about-body mb-4 text-mute-2">
             I&apos;ve been lucky with the teams I&apos;ve landed on. At{" "}
-            <span style={{ color: "var(--accent)" }}>Rippling</span>, I built
+            <span className="text-paper font-medium">Rippling</span>, I built
             backend services for profile changes across HR and payroll for
             20,000+ companies. At{" "}
-            <span style={{ color: "var(--accent)" }}>Activision</span>, I worked
+            <span className="text-paper font-medium">Activision</span>, I worked
             on the Call of Duty store (that one, 100M+ players). At{" "}
-            <span style={{ color: "var(--accent)" }}>Nokia</span>,{" "}I built
+            <span className="text-paper font-medium">Nokia</span>,{" "}I built
             internal data tooling.
           </p>
         </div>
 
         {/* Facts sidebar */}
-        <div
-          className="border p-5 text-[13px] leading-[1.95]"
-          style={{
-            borderColor: "var(--rule)",
-            background: "var(--ink-2)",
-          }}
-        >
+        <div className="font-mono border border-rule bg-ink-2 p-5 text-[13px] leading-[1.95]">
           {[
             { k: "langs", v: "Python · Java · TS · Go" },
             { k: "web", v: "React · Node · Flask" },
@@ -52,15 +33,10 @@ export default function AboutSection() {
             { k: "cloud", v: "AWS · Docker · K8s" },
           ].map(({ k, v }, i) => (
             <div key={k}>
-              {i > 0 && (
-                <div
-                  className="my-[10px] h-px"
-                  style={{ background: "var(--rule)" }}
-                />
-              )}
+              {i > 0 && <div className="my-[10px] h-px bg-rule" />}
               <div className="flex justify-between gap-3 py-[3px]">
-                <span style={{ color: "var(--dim)" }}>{k}</span>
-                <span style={{ color: "var(--paper)", textAlign: "right" }}>
+                <span className="text-dim">{k}</span>
+                <span className="text-paper" style={{ textAlign: "right" }}>
                   {v}
                 </span>
               </div>

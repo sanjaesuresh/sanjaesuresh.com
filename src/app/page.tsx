@@ -37,10 +37,7 @@ export default function Home() {
       />
       <TopBar />
       <main>
-        <div
-          className="mx-auto px-7"
-          style={{ maxWidth: "1080px" }}
-        >
+        <div className="container-page">
           <Masthead />
           <AboutSection />
           <ExperienceSection />
@@ -48,13 +45,10 @@ export default function Home() {
           <AtlasSection />
           <PhotographySection />
           <ContactSection />
-          <footer
-            className="flex flex-wrap justify-between gap-2 pb-[60px] pt-[30px] text-[12px]"
-            style={{ color: "var(--dim)" }}
-          >
+          <footer className="font-mono flex flex-wrap justify-between gap-2 pb-[60px] pt-[30px] text-[12px] text-dim">
             <span>
               &copy; 2026{" "}
-              <span style={{ color: "var(--accent-dim)" }}>sanjae suresh</span>
+              <span className="text-accent-dim">sanjae suresh</span>
             </span>
           </footer>
         </div>

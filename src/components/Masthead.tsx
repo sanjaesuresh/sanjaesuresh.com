@@ -1,13 +1,12 @@
 "use client";
 
 import Image from "next/image";
-import { useEffect, useRef, useState } from "react";
+import { useRef } from "react";
 
 export default function Masthead() {
-  const [hasHeadshot, setHasHeadshot] = useState(false);
   const nameRef = useRef<HTMLHeadingElement>(null);
 
-  // ripple: letters near the cursor swell from 600 up to 800 weight,
+  // ripple: letters near the cursor swell from 500 up to 700 weight,
   // falling off over ~90px. skipped entirely under reduced motion.
   const handleNameMove = (e: React.MouseEvent) => {
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
@@ -17,7 +16,7 @@ export default function Masthead() {
         const r = s.getBoundingClientRect();
         const d = Math.abs(e.clientX - (r.left + r.width / 2));
         s.style.fontWeight = String(
-          Math.round(600 + Math.max(0, 1 - d / 90) * 200)
+          Math.round(500 + Math.max(0, 1 - d / 90) * 200)
         );
       });
   };
@@ -30,22 +29,13 @@ export default function Masthead() {
       });
   };
 
-  useEffect(() => {
-    // We'll attempt to load the image; if it 404s we show placeholder
-    const img = new window.Image();
-    img.onload = () => setHasHeadshot(true);
-    img.onerror = () => setHasHeadshot(false);
-    img.src = "/headshot.jpg";
-  }, []);
-
   return (
-    <div className="mast-grid border-b" style={{ borderColor: "var(--rule)" }}>
+    <div className="mast-grid border-b border-rule">
       {/* Left: preamble + actions */}
       <div>
         <h1
           ref={nameRef}
-          className="mb-2 text-[52px] font-semibold leading-tight"
-          style={{ color: "var(--accent)" }}
+          className="mb-2 text-[52px] font-medium leading-tight text-accent"
           aria-label="sanjae suresh"
           onMouseMove={handleNameMove}
           onMouseLeave={handleNameLeave}
@@ -60,43 +50,40 @@ export default function Masthead() {
           </span>
         </h1>
 
-        <div
-          className="preamble-block mb-9"
-          style={{ color: "var(--mute)" }}
-        >
+        <div className="preamble-block mb-9">
           <span className="pa-key">role</span>
           <span className="pa-sep">:</span>
-          <span className="pa-val" style={{ color: "var(--paper)" }}>
+          <span className="pa-val text-paper">
             software engineer
           </span>
 
           <span className="pa-key">study</span>
           <span className="pa-sep">:</span>
-          <span className="pa-val" style={{ color: "var(--paper)" }}>
+          <span className="pa-val text-paper">
             bsc computer science · wilfrid laurier &apos;26
           </span>
 
           <span className="pa-key">also</span>
           <span className="pa-sep">:</span>
-          <span className="pa-val" style={{ color: "var(--paper)" }}>
+          <span className="pa-val text-paper">
             photographer
           </span>
 
           <span className="pa-key">based</span>
           <span className="pa-sep">:</span>
-          <span className="pa-val" style={{ color: "var(--paper)" }}>
+          <span className="pa-val text-paper">
             new york city
           </span>
 
           <span className="pa-key">status</span>
           <span className="pa-sep">:</span>
           <span className="pa-val">
-            <span style={{ color: "var(--accent)" }}>swe</span> @ bloomberg
+            <span className="text-accent">swe</span> @ bloomberg
             <span className="blink-cursor" aria-hidden="true" />
           </span>
         </div>
 
-        <div className="mast-actions flex flex-wrap gap-[14px] text-[13px]">
+        <div className="mast-actions flex flex-wrap gap-[14px]">
           <a
             href="/resume-sanjae-suresh.pdf"
             download
@@ -122,33 +109,15 @@ export default function Masthead() {
       </div>
 
       {/* Right: headshot */}
-      <div
-        className="headshot-box relative overflow-hidden"
-        style={{ background: "var(--ink-2)" }}
-      >
-        {hasHeadshot ? (
-          <Image
-            src="/headshot.jpg"
-            alt="Sanjae Suresh"
-            fill
-            priority
-            sizes="270px"
-            style={{ objectFit: "cover" }}
-          />
-        ) : (
-          <div
-            className="headshot-placeholder flex h-full w-full items-center justify-center text-center text-[12px] leading-[1.7]"
-            style={{
-              color: "var(--dim)",
-              outline: "1px dashed var(--accent-dim)",
-              outlineOffset: "2px",
-            }}
-          >
-            headshot
-            <br />
-            drop content/headshot.jpg
-          </div>
-        )}
+      <div className="headshot-box relative overflow-hidden bg-ink-2">
+        <Image
+          src="/headshot.jpg"
+          alt="Sanjae Suresh, portrait"
+          fill
+          priority
+          sizes="270px"
+          style={{ objectFit: "cover" }}
+        />
       </div>
     </div>
   );

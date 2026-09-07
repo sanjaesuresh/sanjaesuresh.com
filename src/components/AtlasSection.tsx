@@ -15,20 +15,11 @@ export default function AtlasSection() {
   const [active, setActive] = useState<string | null>(null);
 
   return (
-    <section
-      id="atlas"
-      className="border-b py-[56px]"
-      style={{ borderColor: "var(--rule)" }}
-    >
-      <SectionHead title="atlas" />
+    <section id="atlas" className="border-b border-rule py-[56px]">
+      <SectionHead title="atlas" meta={`${countryCount} countries`} />
 
       <div
-        className="relative border"
-        style={{
-          borderColor: "var(--rule)",
-          background: "var(--ink-2)",
-          padding: "18px",
-        }}
+        className="relative border border-rule bg-ink-2 p-[18px]"
         onMouseLeave={() => setActive(null)}
       >
         {/* Map layer: country outlines drawn in cyan over a faint graticule. */}
@@ -47,7 +38,7 @@ export default function AtlasSection() {
                 y1={y(85)}
                 x2={x(lon)}
                 y2={y(-60)}
-                stroke="var(--rule)"
+                className="stroke-rule"
                 strokeWidth={0.5}
                 opacity={0.35}
                 vectorEffect="non-scaling-stroke"
@@ -60,7 +51,7 @@ export default function AtlasSection() {
                 y1={y(lat)}
                 x2={x(180)}
                 y2={y(lat)}
-                stroke="var(--rule)"
+                className="stroke-rule"
                 strokeWidth={0.5}
                 opacity={0.35}
                 vectorEffect="non-scaling-stroke"
@@ -70,7 +61,7 @@ export default function AtlasSection() {
 
           <g
             fill="rgba(91,168,204,0.05)"
-            stroke="var(--accent-dim)"
+            className="stroke-accent-dim"
             strokeWidth={0.6}
             strokeLinejoin="round"
             vectorEffect="non-scaling-stroke"
@@ -81,8 +72,9 @@ export default function AtlasSection() {
           </g>
         </svg>
 
-        {/* Marker layer: one button per city, positioned by the shared projection. */}
-        <div className="absolute" style={{ inset: "18px" }}>
+        {/* Marker layer: one button per city, positioned by the shared projection.
+            inset must match the map plate's padding above so markers align with the svg. */}
+        <div className="absolute inset-[18px]">
           {trips.map((t) => {
             const { left, top } = toPercent(t.lon, t.lat);
             const isActive = active === t.id;
@@ -119,7 +111,6 @@ export default function AtlasSection() {
                 />
                 {isActive && (
                   <div
-                    role="status"
                     className="atlas-tip"
                     style={{
                       bottom: below ? "auto" : "calc(100% + 11px)",
@@ -131,18 +122,18 @@ export default function AtlasSection() {
                     }}
                   >
                     <div className="atlas-tip-head">
-                      <span style={{ color: "var(--accent)" }}>{t.city}</span>
+                      <span className="text-accent">{t.city}</span>
                       {t.when && (
-                        <span style={{ color: "var(--dim)" }}>{t.when}</span>
+                        <span className="text-dim">{t.when}</span>
                       )}
                     </div>
                     {t.country !== t.city && (
-                      <div style={{ color: "var(--mute)" }}>{t.country}</div>
+                      <div className="text-mute">{t.country}</div>
                     )}
                     {t.note && (
                       <div
-                        className="mt-[5px]"
-                        style={{ color: "var(--paper)", opacity: 0.82 }}
+                        className="mt-[5px] text-paper"
+                        style={{ opacity: 0.82 }}
                       >
                         {t.note}
                       </div>
@@ -155,16 +146,13 @@ export default function AtlasSection() {
         </div>
       </div>
 
-      <p
-        className="mt-[14px] text-[12px]"
-        style={{ color: "var(--dim)" }}
-      >
+      <p className="font-mono mt-[14px] text-[12px] text-dim">
         {"hover or tap a marker · "}
-        <span style={{ color: "var(--signal)" }}>◎</span> home base
+        <span className="text-signal">◎</span> home base
         {"  ·  "}
-        <span style={{ color: "var(--lived)" }}>●</span> lived
+        <span className="text-lived">●</span> lived
         {"  ·  "}
-        <span style={{ color: "var(--accent)" }}>○</span> visited
+        <span className="text-accent">○</span> visited
       </p>
     </section>
   );

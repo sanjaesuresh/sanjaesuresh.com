@@ -2,24 +2,15 @@
 
 export default function TopBar() {
   return (
-    <header
-      className="sticky top-0 z-40 border-b"
-      style={{
-        background: "rgba(12,24,34,.86)",
-        backdropFilter: "blur(6px)",
-        borderColor: "var(--rule)",
-      }}
-    >
-      <div
-        className="mx-auto flex items-center justify-between gap-4 px-7"
-        style={{ maxWidth: "1080px", height: "54px" }}
-      >
-        <span
-          className="whitespace-nowrap text-[13px]"
-          style={{ color: "var(--mute)" }}
-        >
-          <span style={{ color: "var(--accent)" }}>sanjae suresh</span>{" "}
-          <span style={{ color: "var(--dim)" }}>·</span> portfolio
+    <header className="topbar sticky top-0 z-40">
+      <div className="topbar-inner container-page flex items-center justify-between gap-4 font-mono">
+        <span className="whitespace-nowrap text-[13px] text-mute">
+          <span className="text-accent">sanjae suresh</span>{" "}
+          {/* wrapped so only this suffix (not the name) can be hidden on very
+              narrow screens without touching row-1's flex layout */}
+          <span className="topbar-suffix">
+            <span className="text-dim">·</span> portfolio
+          </span>
         </span>
 
         <nav
@@ -40,18 +31,9 @@ export default function TopBar() {
           ))}
         </nav>
 
-        <span
-          className="status-chip flex items-center gap-2 text-[12px]"
-          style={{ color: "var(--mute)" }}
-        >
+        <span className="flex items-center gap-2 text-[12px] text-mute">
           <span
-            className="inline-block"
-            style={{
-              width: "7px",
-              height: "7px",
-              background: "var(--signal)",
-              borderRadius: "50%",
-            }}
+            className="inline-block size-[7px] rounded-full bg-signal"
             aria-hidden="true"
           />
           swe @ bloomberg
